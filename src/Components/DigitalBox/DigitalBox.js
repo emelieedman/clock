@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles.module.css"
+import styles from "./DigitalBox.module.css"
 
 const DigitalBox = (props) => {
     return (

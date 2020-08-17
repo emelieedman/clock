@@ -29,3 +29,9 @@
   box-shadow: 47px 38px 53px rgba(174, 174, 192, 0.2), -20px -20px 37px 14px #FFFFFF, inset 4px 4px 6px 5px #FFFFFF;
   filter: blur(4px);
 }
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  justify-content: space-around;
+}
