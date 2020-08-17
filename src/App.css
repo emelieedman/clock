@@ -1,5 +1,6 @@
 
 
+
 .App {
   background: #F0F0F3;
   display: grid;
@@ -7,18 +8,11 @@
     grid-template-columns: 100vw;
   }
 
-.wrapper {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.digitalnr-box {
-  align-self: center;
-  width: 74px;
-  height: 74px;
-  background: rgba(174, 174, 192, 0.35);
-  box-shadow: -4px -4px 6px rgba(174, 174, 192, 0.2), 4px 4px 6px #FFFFFF, inset 4px 4px 6px rgba(174, 174, 192, 0.2);
-}
+  .wrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
 
 .ellipse {
   border-radius: 100%;

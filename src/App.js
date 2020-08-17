@@ -1,16 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import DigitalBox from './Components/DigitalBox/DigitalBox.js';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App"> 
       <div className="wrapper">
-      <div className="digitalnr-box"></div>
-      <div className="digitalnr-box"></div>
-      <div className="digitalnr-box"></div>
+        <DigitalBox nr="00" />
+        <DigitalBox nr="00" />
+        <DigitalBox nr="00" />
       </div>
-     
+      
       <div className="ellipse">
       </div>
     </div>
