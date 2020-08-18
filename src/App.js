@@ -3,6 +3,14 @@ import ReactDOM from 'react-dom';
 import './App.css';
 import DigitalBox from './Components/DigitalBox/DigitalBox';
 import Button from './Components/Button/Button'
+import alarmImg from './Assets/alarm.svg'
+import alarmImgActive from './Assets/alarm-active.svg'
+import clockImg from './Assets/clock.svg'
+import clockImgActive from './Assets/clock-active.svg'
+import stopwatchImg from './Assets/stopwatch.svg'
+import stopwatchImgActive from './Assets/stopwatch-active.svg'
+import timerImg from './Assets/timer.svg'
+import timerImgActive from './Assets/timer-active.svg'
 
 function App() {
 
@@ -20,10 +28,10 @@ function App() {
         <Button text='Start'/>
       </div>
       <div className='navigation-buttons'>
-        <Button text='Start'/>
-        <Button text='Start'/>
-        <Button text='Start'/>
-        <Button text='Start'/>
+        <Button img={clockImg}/>
+        <Button img={alarmImg}/>
+        <Button img={timerImg}/>
+        <Button img={stopwatchImg}/>
       </div>
     </div>
   );
