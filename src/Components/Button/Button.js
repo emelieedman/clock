@@ -1,12 +1,13 @@
-import React from 'react'
-import styles from './Button.module.css'
+// @ts-check
+import React from "react";
+import styles from "./Button.module.css";
 
-const Button = (props) => {
-    return(
-    props.img ? 
-    <button type='button' id="button" className={styles.button}><img src={props.img} alt="" width="30px"/></button>
-    : <button type='button' id="button" className={styles.button}>{props.text}</button>
-    )
-}
+const Button = ({ onClick, img, text }) => {
+  return (
+    <button type="button" className={styles.button} onClick={onClick}>
+      {img ? <img src={img} alt="" width="30px" /> : text}
+    </button>
+  );
+};
 
 export default Button;
