@@ -15,3 +15,65 @@
   justify-content: space-between;
   justify-content: space-around;
 }
+
+.dot {
+  z-index: 2;
+  align-self: center;
+  justify-self: center;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+
+  /* Linear */
+
+  background: linear-gradient(180deg, #ff9900 0%, #ff4a76 83.85%, #ff00e5 100%);
+
+  box-shadow: 10px 10px 8px rgba(174, 174, 192, 0.6);
+}
+
+.notAnimated {
+  content: "";
+  position: absolute;
+  top: 35%;
+  left: calc(50% - 5px);
+  z-index: 1;
+  border-radius: 25px;
+  width: 10px;
+  height: 123px;
+
+  /* Linear */
+
+  background: linear-gradient(180deg, #ff9900 0%, #ff4a76 83.85%, #ff00e5 100%);
+  /* text-shadow */
+
+  box-shadow: 10px 10px 8px rgba(174, 174, 192, 0.6);
+}
+
+.animated {
+  content: "";
+  position: absolute;
+  top: 35%;
+  left: calc(50% - 5px);
+  z-index: 1;
+  border-radius: 25px;
+  width: 10px;
+  height: 123px;
+  animation: animate 60s linear infinite;
+  transform-origin: bottom;
+
+  /* Linear */
+
+  background: linear-gradient(180deg, #ff9900 0%, #ff4a76 83.85%, #ff00e5 100%);
+  /* text-shadow */
+
+  box-shadow: 10px 10px 8px rgba(174, 174, 192, 0.6);
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
