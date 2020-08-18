@@ -8,7 +8,7 @@
     grid-template-columns: 100vw;
   }
 
-  .wrapper {
+  .digital-boxes {
     display: flex;
     justify-content: space-evenly;
   }
@@ -30,8 +30,13 @@
   filter: blur(4px);
 }
 
-.button {
+.start-reset-buttons {
   display: flex;
   justify-content: space-between;
   justify-content: space-around;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-evenly;
 }

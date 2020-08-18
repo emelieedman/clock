@@ -8,15 +8,21 @@ function App() {
 
   return (
     <div className="App"> 
-      <div className="wrapper">
+      <div className="digital-boxes">
         <DigitalBox nr="00" />
         <DigitalBox nr="00" />
         <DigitalBox nr="00" />
       </div>
       
       <div className="ellipse"></div>
-      <div className="button">
+      <div className="start-reset-buttons">
         <Button text='Reset'/>
+        <Button text='Start'/>
+      </div>
+      <div className='navigation-buttons'>
+        <Button text='Start'/>
+        <Button text='Start'/>
+        <Button text='Start'/>
         <Button text='Start'/>
       </div>
     </div>
