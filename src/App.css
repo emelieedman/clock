@@ -1,18 +1,9 @@
-
-
-
 .App {
-  background: #F0F0F3;
+  background: #f0f0f3;
   display: grid;
-    grid-template-rows: 30vh 40vh repeat(2, 15vh);
-    grid-template-columns: 100vw;
-  }
-
-  .digital-boxes {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
+  grid-template-rows: 30vh 40vh repeat(2, 15vh);
+  grid-template-columns: 100vw;
+}
 
 .ellipse {
   border-radius: 100%;
@@ -23,20 +14,22 @@
   height: 300px;
 
   /* neu-linear */
-  background: linear-gradient(127.97deg, #D2D2DC 15.24%, #DCDCE4 21.02%, #E2E2E9 32.59%, #FFFFFF 70.03%);
+  background: linear-gradient(
+    127.97deg,
+    #d2d2dc 15.24%,
+    #dcdce4 21.02%,
+    #e2e2e9 32.59%,
+    #ffffff 70.03%
+  );
 
   /* neumorphism-2 */
-  box-shadow: 47px 38px 53px rgba(174, 174, 192, 0.2), -20px -20px 37px 14px #FFFFFF, inset 4px 4px 6px 5px #FFFFFF;
+  box-shadow: 47px 38px 53px rgba(174, 174, 192, 0.2),
+    -20px -20px 37px 14px #ffffff, inset 4px 4px 6px 5px #ffffff;
   filter: blur(4px);
 }
 
-.start-reset-buttons {
-  display: flex;
-  justify-content: space-between;
-  justify-content: space-around;
-}
-
 .navigation-buttons {
+  grid-row-start: 4;
   display: flex;
   justify-content: space-evenly;
 }

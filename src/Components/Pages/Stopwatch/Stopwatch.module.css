@@ -1,0 +1,17 @@
+.wrapper {
+  display: grid;
+  grid-template-rows: 30vh 40vh repeat(2, 15vh);
+  grid-template-columns: 100vw;
+}
+
+.digitalBoxes {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.startResetButtons {
+  grid-row-start: 3;
+  display: flex;
+  justify-content: space-between;
+  justify-content: space-around;
+}
