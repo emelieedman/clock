@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import DigitalBox from "./Components/DigitalBox/DigitalBox";
 import Button from "./Components/Button/Button";
@@ -13,6 +13,15 @@ import timerImgActive from "./Assets/timer-active.svg";
 import Stopwatch from "./Components/Pages/Stopwatch/Stopwatch";
 
 function App() {
+  const [isActive, setIsActive] = useState();
+
+  const handleClick = (id) => {
+    setIsActive({ id });
+    console.log(isActive);
+  };
+
+  const images = [clockImg, alarmImg, timerImg, stopwatchImg];
+
   return (
     <div className="App">
       <Stopwatch />
@@ -20,10 +29,9 @@ function App() {
       <div className="ellipse"></div>
 
       <div className="navigation-buttons">
-        <Button img={clockImg} />
-        <Button img={alarmImg} />
-        <Button img={timerImg} />
-        <Button img={stopwatchImg} />
+        {images.map((item) => (
+          <Button id={item} img={item} onClick={() => handleClick(item)} />
+        ))}
       </div>
     </div>
   );
