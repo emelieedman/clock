@@ -10,6 +10,10 @@ const Stopwatch = () => {
   const [hours, setHours] = useState(0);
   const deg = 6;
 
+  const minTwoDigits = (n) => {
+    return (n < 10 ? "0" : "") + n;
+  };
+
   let second = seconds * deg;
   let minute = minutes * deg;
   let hour = hours * deg;
@@ -42,9 +46,23 @@ const Stopwatch = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.digitalBoxes}>
-        <DigitalBox nr={minutes >= 60 ? setHours(hours + 1) : hours} />
-        <DigitalBox nr={seconds >= 60 ? setMinutes(minutes + 1) : minutes} />
-        <DigitalBox nr={seconds < 60 ? seconds : setSeconds(0)} />
+        <DigitalBox
+          nr={
+            minutes >= 60
+              ? setHours(hours + 1) && setMinutes(0)
+              : minTwoDigits(hours)
+          }
+        />
+        <DigitalBox
+          nr={
+            seconds >= 60
+              ? setMinutes(minutes + 1)
+              : minutes > 60
+              ? setMinutes(0)
+              : minTwoDigits(minutes)
+          }
+        />
+        <DigitalBox nr={seconds < 60 ? minTwoDigits(seconds) : setSeconds(0)} />
       </div>
 
       <div className={styles.clock}>
