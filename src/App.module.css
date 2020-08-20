@@ -18,7 +18,7 @@
   justify-self: center;
 }
 
-.navigation-buttons {
+.navigationButtons {
   grid-row-start: 4;
   display: flex;
   justify-content: space-evenly;
