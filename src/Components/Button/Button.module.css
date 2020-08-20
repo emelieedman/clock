@@ -1,0 +1,45 @@
+.button {
+    background: #F0F0F3;
+    /* neu2 */
+    align-self: center;
+    border: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    /* neu */
+
+    box-shadow: 4px 4px 6px rgba(174, 174, 192, 0.2), -4px -4px 6px #FFFFFF, inset -4px -4px 6px rgba(174, 174, 192, 0.2), inset 4px 4px 6px #FFFFFF;
+
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #AEAEC0;
+
+    }
+
+
+    .button:active {
+        background: linear-gradient(127.97deg, #D2D2DC 15.24%, #DCDCE4 21.02%, #E2E2E9 32.59%, #FFFFFF 70.03%);
+
+        align-self: center;
+        border: 0;
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        /* neu */
+
+        box-shadow: 4px 4px 6px rgba(174, 174, 192, 0.2), -4px -4px 6px #FFFFFF, inset -4px -4px 6px rgba(174, 174, 192, 0.2), inset 4px 4px 6px #FFFFFF;
+
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+
+        color: #AEAEC0;
+    }

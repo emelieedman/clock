@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  background: #f0f0f3;
+  display: grid;
+  grid-template-rows: 20vh 50vh repeat(2, 15vh);
+  grid-template-columns: 100vw;
+}
+
+.ellipse {
+  display: flex;
+  grid-row-start: 2;
+  align-self: center;
+  justify-self: center;
+}
+
+.navigationButtons {
+  grid-row-start: 4;
+  display: flex;
+  justify-content: space-evenly;
+}
