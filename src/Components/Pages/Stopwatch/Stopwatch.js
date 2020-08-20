@@ -7,8 +7,9 @@ const Stopwatch = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
-  const [hours, setHours] = useState(0);
+  const [hours, setHours] = useState(6);
   const deg = 6;
+  const hourDeg = 30;
 
   const minTwoDigits = (n) => {
     return (n < 10 ? "0" : "") + n;
@@ -16,7 +17,7 @@ const Stopwatch = () => {
 
   let second = seconds * deg;
   let minute = minutes * deg;
-  let hour = hours * deg;
+  let hour = hours * hourDeg;
 
   function toggle() {
     setIsRunning(!isRunning);
