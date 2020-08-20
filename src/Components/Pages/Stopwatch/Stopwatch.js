@@ -21,6 +21,8 @@ const Stopwatch = () => {
 
   function reset() {
     setSeconds(0);
+    setMinutes(0);
+    setHours(0);
     setIsRunning(false);
   }
 
