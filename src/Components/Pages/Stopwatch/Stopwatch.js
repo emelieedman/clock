@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react";
 import styles from "./Stopwatch.module.css";
 import DigitalBox from "../../DigitalBox/DigitalBox";
 import Button from "../../Button/Button";
-import arrow from "../../../Assets/stopwatchArrow.svg";
 
 const Stopwatch = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [hours, setHours] = useState(0);
+  const deg = 6;
+
+  let second = seconds * deg;
+  let minute = minutes * deg;
+  let hour = hours * deg;
 
   function toggle() {
     setIsRunning(!isRunning);
@@ -36,12 +40,33 @@ const Stopwatch = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.digitalBoxes}>
-        <DigitalBox nr={minutes > 60 ? setHours(hours + 1) : hours} />
-        <DigitalBox nr={seconds > 60 ? setMinutes(minutes + 1) : minutes} />
-        <DigitalBox nr={seconds <= 60 ? seconds : setSeconds(0)} />
+        <DigitalBox nr={minutes >= 60 ? setHours(hours + 1) : hours} />
+        <DigitalBox nr={seconds >= 60 ? setMinutes(minutes + 1) : minutes} />
+        <DigitalBox nr={seconds < 60 ? seconds : setSeconds(0)} />
       </div>
-      <div className={styles.dot}></div>
-      <div className={isRunning ? styles.animated : styles.notAnimated}></div>
+
+      <div className={styles.clock}>
+        <div className={styles.clockNav} />
+        <div
+          className={styles.secondHand}
+          style={{
+            transform: `rotate(${second}deg) `,
+          }}
+        />
+        <div
+          className={styles.minuteHand}
+          style={{
+            transform: `rotate(${minute}deg) `,
+          }}
+        />
+        <div
+          className={styles.hourHand}
+          style={{
+            transform: `rotate(${hour}deg) `,
+          }}
+        />
+      </div>
+
       <div className={styles.startResetButtons}>
         <Button text="Reset" onClick={reset} />
         <Button text={isRunning ? "Stop" : "Start"} onClick={toggle} />
