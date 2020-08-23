@@ -1,8 +1,20 @@
 import React, { useEffect } from "react";
 import styles from "./Stopwatch.module.css";
 import Button from "../../Button/Button";
+import Digits from "../../Digits/Digits";
 
-const Stopwatch = ({ reset, toggle, isRunning, seconds, setSeconds }) => {
+const Stopwatch = ({
+  reset,
+  toggle,
+  isRunning,
+  seconds,
+  setSeconds,
+  minutes,
+  setMinutes,
+  hours,
+  setHours,
+  minTwoDigits,
+}) => {
   useEffect(() => {
     let interval = null;
 
@@ -16,11 +28,37 @@ const Stopwatch = ({ reset, toggle, isRunning, seconds, setSeconds }) => {
     return () => clearInterval(interval);
   }, [isRunning, seconds, setSeconds]);
 
+  const nr = () => {
+    minutes >= 60 ? setHours(hours + 1) && setMinutes(0) : minTwoDigits(hours);
+  };
+
   return (
-    <div className={styles.startResetButtons}>
-      <Button text="Reset" onClick={reset} />
-      <Button text={isRunning ? "Stop" : "Start"} onClick={toggle} />
-    </div>
+    <>
+      <div className={styles.digits}>
+        <Digits
+          nr={
+            minutes >= 60
+              ? setHours(hours + 1) && setMinutes(0)
+              : minTwoDigits(hours)
+          }
+        />
+        <Digits
+          nr={
+            seconds >= 60
+              ? setMinutes(minutes + 1)
+              : minutes > 60
+              ? setMinutes(0)
+              : minTwoDigits(minutes)
+          }
+        />
+        <Digits nr={seconds < 60 ? minTwoDigits(seconds) : setSeconds(0)} />
+      </div>
+
+      <div className={styles.startResetButtons}>
+        <Button text="Reset" onClick={reset} />
+        <Button text={isRunning ? "Stop" : "Start"} onClick={toggle} />
+      </div>
+    </>
   );
 };
 

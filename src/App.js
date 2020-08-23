@@ -56,12 +56,17 @@ function App() {
                 toggle={toggle}
                 seconds={seconds}
                 setSeconds={setSeconds}
+                minutes={minutes}
+                setMinutes={setMinutes}
+                minTwoDigits={minTwoDigits}
+                hours={hours}
+                setHours={setHours}
               />
             )}
           />
           <Route
             exact
-            path="/static/media/stopwatch.231456d8.svg"
+            path="/static/media/timer.5cfb6cc6.svg"
             component={() => (
               <Timer
                 isRunning={isRunning}

@@ -8,7 +8,7 @@ const Timer = ({ reset, toggle, isRunning, seconds, setSeconds }) => {
 
     if (isRunning) {
       interval = setInterval(() => {
-        setSeconds(seconds + 1);
+        setSeconds(seconds - 1);
       }, 1000);
     } else if (!isRunning && seconds !== 0) {
       clearInterval(interval);

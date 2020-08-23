@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Digits.module.css";
 
-const DigitalBox = (props) => {
+const Digits = (props) => {
   return (
     <div className={styles.digitalBox}>
       <p className={styles.nr}>{props.nr}</p>
@@ -9,4 +9,4 @@ const DigitalBox = (props) => {
   );
 };
 
-export default DigitalBox;
+export default Digits;

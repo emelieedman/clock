@@ -10,12 +10,20 @@ body {
   grid-template-columns: 100vw;
 }
 
-.ellipse {
+/* .ellipse {
   display: flex;
   grid-row-start: 2;
   align-self: center;
   justify-self: center;
-}
+} */
+/* 
+.backgroundImg {
+  z-index: 300;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
 
 .navigationButtons {
   grid-row-start: 4;
@@ -119,10 +127,14 @@ body {
   box-shadow: 0px 1px 5px #aeaec0;
 }
 
-.startResetButtons {
+.digits {
   z-index: 10;
-  grid-row-start: 3;
+  grid-row-start: 1;
   display: flex;
   justify-content: space-between;
   justify-content: space-around;
+}
+
+.stopwatch {
+  z-index: 400;
 }
