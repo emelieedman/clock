@@ -2,22 +2,19 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styles from "./App.module.css";
 import Button from "./Components/Button/Button";
-import alarm from "./Assets/alarm.svg";
-import clock from "./Assets/clock.svg";
-import stopwatch from "./Assets/stopwatch.svg";
-import timer from "./Assets/timer.svg";
 import Stopwatch from "./Components/Pages/Stopwatch/Stopwatch";
 import Timer from "./Components/Pages/Timer/Timer";
 import background from "./Assets/clock-background.svg";
 import Digits from "./Components/Digits/Digits";
+import { navButtonData } from "./navButtonData";
+
+window.navButtonData = navButtonData;
 
 function App() {
   const [isRunning, setIsRunning] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [hours, setHours] = useState(0);
-
-  const images = [clock, alarm, timer, stopwatch];
 
   const deg = 6;
   const hourDeg = 30;
@@ -48,7 +45,7 @@ function App() {
         <Switch>
           <Route
             exact
-            path="/static/media/stopwatch.231456d8.svg"
+            path="/stopwatch"
             component={() => (
               <Stopwatch
                 isRunning={isRunning}
@@ -66,7 +63,7 @@ function App() {
           />
           <Route
             exact
-            path="/static/media/timer.5cfb6cc6.svg"
+            path="/timer"
             component={() => (
               <Timer
                 isRunning={isRunning}
@@ -136,8 +133,13 @@ function App() {
         </div>
 
         <div className={styles.navigationButtons}>
-          {images.map((item) => (
-            <Button className={styles.button} img={item} />
+          {navButtonData.map((item) => (
+            <Button
+              key={item.id}
+              id={item.id}
+              className={styles.button}
+              img={item.img}
+            />
           ))}
         </div>
       </Router>

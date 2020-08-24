@@ -28,10 +28,6 @@ const Stopwatch = ({
     return () => clearInterval(interval);
   }, [isRunning, seconds, setSeconds]);
 
-  const nr = () => {
-    minutes >= 60 ? setHours(hours + 1) && setMinutes(0) : minTwoDigits(hours);
-  };
-
   return (
     <>
       <div className={styles.digits}>
