@@ -5,7 +5,6 @@ import Button from "./Components/Button/Button";
 import Stopwatch from "./Components/Pages/Stopwatch/Stopwatch";
 import Timer from "./Components/Pages/Timer/Timer";
 import background from "./Assets/clock-background.svg";
-import Digits from "./Components/Digits/Digits";
 import { navButtonData } from "./navButtonData";
 
 window.navButtonData = navButtonData;
@@ -67,10 +66,16 @@ function App() {
             component={() => (
               <Timer
                 isRunning={isRunning}
+                setIsRunning={setIsRunning}
                 reset={reset}
                 toggle={toggle}
                 seconds={seconds}
                 setSeconds={setSeconds}
+                minutes={minutes}
+                setMinutes={setMinutes}
+                minTwoDigits={minTwoDigits}
+                hours={hours}
+                setHours={setHours}
               />
             )}
           />
@@ -90,25 +95,6 @@ function App() {
             transform: "translate(-50%, -50%)",
           }}
         />
-        <div className={styles.digits}>
-          <Digits
-            nr={
-              minutes >= 60
-                ? setHours(hours + 1) && setMinutes(0)
-                : minTwoDigits(hours)
-            }
-          />
-          <Digits
-            nr={
-              seconds >= 60
-                ? setMinutes(minutes + 1)
-                : minutes > 60
-                ? setMinutes(0)
-                : minTwoDigits(minutes)
-            }
-          />
-          <Digits nr={seconds < 60 ? minTwoDigits(seconds) : setSeconds(0)} />
-        </div>
 
         <div className={styles.clock}>
           <div className={styles.clockNav} />

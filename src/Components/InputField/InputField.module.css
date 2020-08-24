@@ -1,0 +1,15 @@
+.inputField {
+  width: 70px;
+  align-self: center;
+  margin: 0;
+  padding: 0;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 56px;
+
+  background: #f0f0f3;
+  color: #aeaec0;
+}
