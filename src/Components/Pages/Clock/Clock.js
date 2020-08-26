@@ -14,7 +14,6 @@ const Clock = ({
   const min = date.getMinutes();
   const sec = date.getSeconds();
 
-  console.log(sec);
   useEffect(() => {
     let interval = null;
     interval = setInterval(() => {
@@ -28,6 +27,7 @@ const Clock = ({
   return (
     <>
       <h1 className={styles.headline}>Stockholm</h1>
+      <p className={styles.time}>{h + " " + ":" + " " + min}</p>
       <p className={styles.date}>{date.toDateString()}</p>
     </>
   );
