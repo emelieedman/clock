@@ -1,44 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Clock.module.css";
 
-const Clock = () => {
+const Clock = ({
+  hours,
+  setHours,
+  minutes,
+  setMinutes,
+  seconds,
+  setSeconds,
+}) => {
   const date = new Date();
-  const year = date.getFullYear();
+  const h = date.getHours();
+  const min = date.getMinutes();
+  const sec = date.getSeconds();
 
-  const todaysDate = date.getUTCDate();
-
-  const day = new Array();
-  day[0] = "Monday";
-  day[1] = "Tuesday";
-  day[2] = "Wednesday";
-  day[3] = "Thursday";
-  day[4] = "Friday";
-  day[5] = "Saturday";
-  day[6] = "Sunday";
-
-  const d = day[date.getDay()];
-
-  const month = new Array();
-  month[0] = "January";
-  month[1] = "February";
-  month[2] = "March";
-  month[3] = "April";
-  month[4] = "May";
-  month[5] = "June";
-  month[6] = "July";
-  month[7] = "August";
-  month[8] = "September";
-  month[9] = "October";
-  month[10] = "November";
-  month[11] = "December";
-
-  const m = month[date.getMonth()];
+  console.log(sec);
+  useEffect(() => {
+    let interval = null;
+    interval = setInterval(() => {
+      setHours(h);
+      setMinutes(min);
+      setSeconds(sec);
+    }, 1000);
+    return () => clearInterval(interval);
+  });
 
   return (
     <>
-      <p className={styles.date}>
-        {d + ", " + todaysDate + ", " + m + ", " + year}
-      </p>
+      <h1 className={styles.headline}>Stockholm</h1>
+      <p className={styles.date}>{date.toDateString()}</p>
     </>
   );
 };

@@ -53,7 +53,20 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={() => <Clock />} />
-          <Route exact path="/clock" component={() => <Clock />} />
+          <Route
+            exact
+            path="/clock"
+            component={() => (
+              <Clock
+                seconds={seconds}
+                setSeconds={setSeconds}
+                minutes={minutes}
+                setMinutes={setMinutes}
+                hours={hours}
+                setHours={setHours}
+              />
+            )}
+          />
           <Route
             exact
             path="/stopwatch"
