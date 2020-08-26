@@ -51,17 +51,17 @@ const Timer = ({
         <InputField
           timeType="hours"
           onChange={(event) => setHours(event.target.value)}
-          value={hours}
+          value={minTwoDigits(hours)}
         />
         <InputField
           timeType="minutes"
           onChange={(event) => setMinutes(event.target.value)}
-          value={minutes}
+          value={minTwoDigits(minutes)}
         />
         <InputField
           timeType="seconds"
           onChange={(event) => setSeconds(event.target.value)}
-          value={seconds}
+          value={minTwoDigits(seconds)}
         />
       </div>
 

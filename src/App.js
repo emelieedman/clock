@@ -15,15 +15,6 @@ function App() {
   const [minutes, setMinutes] = useState(0);
   const [hours, setHours] = useState(0);
 
-  let h = 0;
-  let min = 0;
-  let sec = 0;
-
-  const [time, setTime] = useState({
-    h: parseInt(h),
-    min: parseInt(min),
-    sec: parseInt(sec),
-  });
   const [over, setOver] = useState(false);
 
   const deg = 6;
@@ -32,6 +23,12 @@ function App() {
   let second = seconds * deg;
   let minute = minutes * deg;
   let hour = hours * hourDeg;
+
+  const numbers = () => {
+    for (let i = 0; i < 60; i++) {
+      numbers.push(i);
+    }
+  };
 
   const minTwoDigits = (n) => {
     return (n < 10 ? "0" : "") + n;
@@ -88,11 +85,7 @@ function App() {
                 minTwoDigits={minTwoDigits}
                 hours={hours}
                 setHours={setHours}
-                time={time}
-                setTime={setTime}
-                h={h}
-                min={min}
-                sec={sec}
+                numbers={numbers}
                 over={over}
                 setOver={setOver}
               />
