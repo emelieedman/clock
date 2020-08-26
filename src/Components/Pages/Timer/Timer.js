@@ -17,11 +17,6 @@ const Timer = ({
   minTwoDigits,
   over,
   setOver,
-  time,
-  setTime,
-  h,
-  min,
-  sec,
 }) => {
   useEffect(() => {
     let interval = null;
@@ -37,6 +32,14 @@ const Timer = ({
           setHours(hours - 1);
           setMinutes(59);
           setSeconds(59);
+        } else if (
+          isRunning === true &&
+          seconds === 0 &&
+          minutes === 0 &&
+          hours === 0
+        ) {
+          setOver(true);
+          setIsRunning(false);
         }
       }, 1000);
     } else if (!isRunning && seconds !== 0) {
@@ -44,6 +47,11 @@ const Timer = ({
     }
     return () => clearInterval(interval);
   }, [isRunning, seconds, setSeconds, hours, setHours, minutes, setMinutes]);
+
+  if (over === true) {
+    alert("time's up!");
+    setOver(false);
+  }
 
   return (
     <>
