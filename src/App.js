@@ -107,7 +107,7 @@ function App() {
           style={{
             zIndex: "0",
             display: "block",
-            width: "115%",
+            width: "100vw",
             position: "absolute",
             top: "42%",
             left: "50%",
