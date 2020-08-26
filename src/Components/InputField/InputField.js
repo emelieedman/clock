@@ -12,6 +12,8 @@ const InputField = (props) => {
         value={props.value}
         min="0"
       ></input>
+
+      <p className={styles.timeType}>{props.timeType}</p>
     </>
   );
 };

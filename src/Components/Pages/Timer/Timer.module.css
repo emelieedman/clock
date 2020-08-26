@@ -1,13 +1,11 @@
-* {
-  overflow: hidden;
-}
-
 .inputFields {
+  display: flex;
+  grid-row-start: 1;
+  align-self: flex-end;
   z-index: 10;
   grid-row-start: 1;
-  display: flex;
-  justify-content: space-between;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  padding-left: 20px;
 }
 .startResetButtons {
   z-index: 10;
