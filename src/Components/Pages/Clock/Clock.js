@@ -27,7 +27,7 @@ const Clock = ({
   return (
     <>
       <h1 className={styles.headline}>Stockholm</h1>
-      <p className={styles.time}>{h + " " + ":" + " " + min}</p>
+      <p className={styles.time}>{h + ":" + min}</p>
       <p className={styles.date}>{date.toDateString()}</p>
     </>
   );
