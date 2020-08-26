@@ -1,45 +1,57 @@
 .button {
-    background: #F0F0F3;
-    /* neu2 */
-    align-self: center;
-    border: 0;
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
-    /* neu */
+  background: #f0f0f3;
+  /* neu2 */
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  /* neu */
 
-    box-shadow: 4px 4px 6px rgba(174, 174, 192, 0.2), -4px -4px 6px #FFFFFF, inset -4px -4px 6px rgba(174, 174, 192, 0.2), inset 4px 4px 6px #FFFFFF;
+  box-shadow: 4px 4px 6px rgba(174, 174, 192, 0.2), -4px -4px 6px #ffffff,
+    inset -4px -4px 6px rgba(174, 174, 192, 0.2), inset 4px 4px 6px #ffffff;
 
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
 
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
+  color: #aeaec0;
+}
 
-    color: #AEAEC0;
+.button .img {
+  position: absolute;
+  top: 50%;
+}
 
-    }
+.button:active {
+  background: linear-gradient(
+    127.97deg,
+    #d2d2dc 15.24%,
+    #dcdce4 21.02%,
+    #e2e2e9 32.59%,
+    #ffffff 70.03%
+  );
 
+  align-self: center;
+  border: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  /* neu */
 
-    .button:active {
-        background: linear-gradient(127.97deg, #D2D2DC 15.24%, #DCDCE4 21.02%, #E2E2E9 32.59%, #FFFFFF 70.03%);
+  box-shadow: 4px 4px 6px rgba(174, 174, 192, 0.2), -4px -4px 6px #ffffff,
+    inset -4px -4px 6px rgba(174, 174, 192, 0.2), inset 4px 4px 6px #ffffff;
 
-        align-self: center;
-        border: 0;
-        width: 60px;
-        height: 60px;
-        border-radius: 100%;
-        /* neu */
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
 
-        box-shadow: 4px 4px 6px rgba(174, 174, 192, 0.2), -4px -4px 6px #FFFFFF, inset -4px -4px 6px rgba(174, 174, 192, 0.2), inset 4px 4px 6px #FFFFFF;
-
-
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 16px;
-
-        color: #AEAEC0;
-    }
+  color: #aeaec0;
+}
