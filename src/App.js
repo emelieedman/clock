@@ -52,7 +52,20 @@ function App() {
     <div className={styles.App}>
       <Router>
         <Switch>
-          <Route exact path="/" component={() => <Clock />} />
+          <Route
+            exact
+            path="/"
+            component={() => (
+              <Clock
+                seconds={seconds}
+                setSeconds={setSeconds}
+                minutes={minutes}
+                setMinutes={setMinutes}
+                hours={hours}
+                setHours={setHours}
+              />
+            )}
+          />
           <Route
             exact
             path="/clock"
