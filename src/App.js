@@ -6,6 +6,7 @@ import Stopwatch from "./Components/Pages/Stopwatch/Stopwatch";
 import Timer from "./Components/Pages/Timer/Timer";
 import background from "./Assets/clock-background.svg";
 import { navButtonData } from "./navButtonData";
+import Clock from "./Components/Pages/Clock/Clock";
 
 window.navButtonData = navButtonData;
 
@@ -51,6 +52,8 @@ function App() {
     <div className={styles.App}>
       <Router>
         <Switch>
+          <Route exact path="/" component={() => <Clock />} />
+          <Route exact path="/clock" component={() => <Clock />} />
           <Route
             exact
             path="/stopwatch"
