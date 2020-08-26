@@ -8,10 +8,10 @@ const InputField = (props) => {
       <input
         className={styles.inputField}
         type="number"
-        id="inputField"
         name="inputField"
         onChange={props.onChange}
         value={props.value}
+        min="0"
       ></input>
     </>
   );

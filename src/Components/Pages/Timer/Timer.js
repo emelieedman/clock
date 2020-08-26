@@ -15,54 +15,51 @@ const Timer = ({
   hours,
   setHours,
   minTwoDigits,
+  over,
+  setOver,
+  time,
+  setTime,
+  h,
+  min,
+  sec,
 }) => {
   useEffect(() => {
     let interval = null;
 
     if (isRunning) {
       interval = setInterval(() => {
-        setSeconds(seconds - 1);
+        if (seconds > 0) {
+          setSeconds(seconds - 1);
+        } else if (seconds === 0 && minutes > 0) {
+          setMinutes(minutes - 1);
+          setSeconds(59);
+        } else if (seconds === 0 && minutes === 0 && hours > 0) {
+          setHours(hours - 1);
+          setMinutes(59);
+          setSeconds(59);
+        }
       }, 1000);
     } else if (!isRunning && seconds !== 0) {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [isRunning, seconds, setSeconds]);
+  }, [isRunning, seconds, setSeconds, hours, setHours, minutes, setMinutes]);
 
   return (
     <>
       <div className={styles.inputFields}>
         <InputField
-          timeType="hour"
-          // nr={hours !== 0 && minutes <= 0 && seconds <= 0 ? hours - 1 : hours}
+          timeType="hours"
           onChange={(event) => setHours(event.target.value)}
           value={hours}
         />
         <InputField
           timeType="minutes"
-          nr={
-            seconds < 0 && minutes > 0
-              ? setMinutes(minutes - 1)
-              : minutes < 0 && hours > 0
-              ? setMinutes(59)
-              : minutes
-          }
           onChange={(event) => setMinutes(event.target.value)}
           value={minutes}
         />
         <InputField
           timeType="seconds"
-          nr={
-            seconds > 0
-              ? seconds - 1
-              : seconds <= 0 && minutes <= 0 && hours <= 0
-              ? setIsRunning(false)
-              : seconds < 0 && minutes > 0
-              ? setSeconds(59)
-              : seconds < 0 && hours > 0
-              ? setSeconds(0)
-              : seconds
-          }
           onChange={(event) => setSeconds(event.target.value)}
           value={seconds}
         />

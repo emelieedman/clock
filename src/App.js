@@ -15,6 +15,17 @@ function App() {
   const [minutes, setMinutes] = useState(0);
   const [hours, setHours] = useState(0);
 
+  let h = 0;
+  let min = 0;
+  let sec = 0;
+
+  const [time, setTime] = useState({
+    h: parseInt(h),
+    min: parseInt(min),
+    sec: parseInt(sec),
+  });
+  const [over, setOver] = useState(false);
+
   const deg = 6;
   const hourDeg = 30;
 
@@ -32,10 +43,11 @@ function App() {
   };
 
   const reset = () => {
-    setSeconds(0);
-    setMinutes(0);
     setHours(0);
+    setMinutes(0);
+    setSeconds(0);
     setIsRunning(false);
+    setOver(false);
   };
 
   return (
@@ -76,6 +88,13 @@ function App() {
                 minTwoDigits={minTwoDigits}
                 hours={hours}
                 setHours={setHours}
+                time={time}
+                setTime={setTime}
+                h={h}
+                min={min}
+                sec={sec}
+                over={over}
+                setOver={setOver}
               />
             )}
           />
