@@ -25,7 +25,7 @@
 } */
 
 .navigationButtons {
-  grid-row-start: 4;
+  grid-row-start: 5;
   display: flex;
   justify-content: space-evenly;
 }
