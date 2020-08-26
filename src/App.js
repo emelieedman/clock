@@ -153,6 +153,7 @@ function App() {
               id={item.id}
               className={styles.button}
               img={item.img}
+              onClick={reset}
             />
           ))}
         </div>
