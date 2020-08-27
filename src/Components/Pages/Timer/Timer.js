@@ -54,12 +54,12 @@ const Timer = ({
           value={minTwoDigits(hours)}
         />
         <InputField
-          timeType="minutes"
+          timeType="min"
           onChange={(event) => setMinutes(event.target.value)}
           value={minTwoDigits(minutes)}
         />
         <InputField
-          timeType="seconds"
+          timeType="sec"
           onChange={(event) => setSeconds(event.target.value)}
           value={minTwoDigits(seconds)}
         />

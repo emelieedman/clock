@@ -8,10 +8,9 @@
   font-weight: normal;
   font-size: 24px;
   line-height: 56px;
-
-  background: #f0f0f3;
-  color: #aeaec0;
+  background: none;
   border: none;
+  color: #d0d0d0;
 }
 
 .timeType {
@@ -23,5 +22,4 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 56px;
-  color: #aeaec0;
 }
