@@ -159,7 +159,7 @@ function App() {
             }}
           />
         </div>
-        <Menu />
+        <Menu reset={reset} />
         {/* <div className={styles.navigationButtons}>
           {navButtonData.map((item) => (
             <Button

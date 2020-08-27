@@ -1,17 +1,19 @@
 .digits {
   display: flex;
-  grid-row-start: 1;
+  grid-row-start: 2;
   align-self: flex-end;
   z-index: 10;
-  grid-row-start: 1;
   justify-content: space-evenly;
-  padding-left: 20px;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
 .startResetButtons {
-  z-index: 30;
-  grid-row-start: 4;
+  z-index: 10;
+  grid-row-start: 5;
   display: flex;
   justify-content: space-between;
   justify-content: space-around;
+  align-self: flex-start;
+  padding: 10px;
 }
