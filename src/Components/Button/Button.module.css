@@ -1,55 +1,20 @@
 .button {
-  background: #f0f0f3;
-  /* neu2 */
   display: flex;
   align-self: center;
   justify-content: center;
   align-items: center;
   border: 0;
-  width: 55px;
-  height: 55px;
-  border-radius: 100%;
-  /* neu */
-
-  box-shadow: 4px 4px 6px rgba(174, 174, 192, 0.2), -4px -4px 6px #ffffff,
-    inset -4px -4px 6px rgba(174, 174, 192, 0.2), inset 4px 4px 6px #ffffff;
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-
-  color: #aeaec0;
-}
-
-.img {
-}
-
-.button:active {
-  background: linear-gradient(
-    127.97deg,
-    #d2d2dc 15.24%,
-    #dcdce4 21.02%,
-    #e2e2e9 32.59%,
-    #ffffff 70.03%
-  );
-
-  align-self: center;
-  border: 0;
   width: 60px;
   height: 60px;
   border-radius: 100%;
-  /* neu */
-
-  box-shadow: 4px 4px 6px rgba(174, 174, 192, 0.2), -4px -4px 6px #ffffff,
-    inset -4px -4px 6px rgba(174, 174, 192, 0.2), inset 4px 4px 6px #ffffff;
-
+  background: #252525;
+  box-shadow: 4px 4px 6px #171717, -4px -4px 6px #323233,
+    inset -4px -4px 6px #171717, inset 4px 4px 6px #323233;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
 
-  color: #aeaec0;
+  color: #5c5c5d;
 }

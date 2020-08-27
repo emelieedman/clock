@@ -132,7 +132,7 @@ function App() {
             display: "block",
             width: "100vw",
             position: "absolute",
-            top: "42%",
+            top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
           }}
