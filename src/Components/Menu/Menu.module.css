@@ -1,6 +1,6 @@
 .menuBtnClosed {
   position: absolute;
-  width: 20vw;
+  width: 10vw;
   height: 46px;
   left: 90vw;
   top: 30px;
@@ -15,7 +15,7 @@
 }
 .menuBtnOpen {
   position: absolute;
-  width: 20vw;
+  width: 10vw;
   height: 46px;
   left: 40vw;
   top: 30px;
