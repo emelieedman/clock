@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./Timer.module.css";
 import Button from "../../Button/Button";
 import InputField from "../../InputField/InputField";
+import alarm from "../../../Assets/Music_Box-Big_Daddy-1389738694.mp3";
 
 const Timer = ({
   reset,
@@ -17,11 +18,6 @@ const Timer = ({
   minTwoDigits,
   over,
   setOver,
-  time,
-  setTime,
-  h,
-  min,
-  sec,
 }) => {
   useEffect(() => {
     let interval = null;
@@ -37,6 +33,14 @@ const Timer = ({
           setHours(hours - 1);
           setMinutes(59);
           setSeconds(59);
+        } else if (
+          isRunning === true &&
+          seconds === 0 &&
+          minutes === 0 &&
+          hours === 0
+        ) {
+          setOver(true);
+          setIsRunning(false);
         }
       }, 1000);
     } else if (!isRunning && seconds !== 0) {
@@ -45,12 +49,10 @@ const Timer = ({
     return () => clearInterval(interval);
   }, [isRunning, seconds, setSeconds, hours, setHours, minutes, setMinutes]);
 
-  const numbers = () => {
-    let number = [];
-    for (let i = 0; i < 60; i++) {
-      return number.push[i];
-    }
-  };
+  if (over === true) {
+    setOver(!over);
+    alert("time's up!");
+  }
 
   return (
     <>
@@ -58,23 +60,27 @@ const Timer = ({
         <InputField
           timeType="hours"
           onChange={(event) => setHours(event.target.value)}
-          value={minTwoDigits(hours)}
+          value={hours}
         />
         <InputField
           timeType="min"
           onChange={(event) => setMinutes(event.target.value)}
-          value={minTwoDigits(minutes)}
+          value={minutes}
         />
         <InputField
           timeType="sec"
           onChange={(event) => setSeconds(event.target.value)}
-          value={minTwoDigits(seconds)}
+          value={seconds}
         />
       </div>
-
       <div className={styles.startResetButtons}>
         <Button text="Reset" onClick={reset} />
-        <Button text={isRunning ? "Pause" : "Start"} onClick={toggle} />
+        <Button
+          text={isRunning ? "Pause" : "Start"}
+          onClick={() => {
+            toggle();
+          }}
+        />
       </div>
     </>
   );

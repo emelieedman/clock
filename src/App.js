@@ -14,9 +14,9 @@ window.navButtonData = navButtonData;
 
 function App() {
   const [isRunning, setIsRunning] = useState(false);
-  const [seconds, setSeconds] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [hours, setHours] = useState(0);
+  const [seconds, setSeconds] = useState(undefined);
+  const [minutes, setMinutes] = useState(undefined);
+  const [hours, setHours] = useState(undefined);
   const [over, setOver] = useState(false);
 
   const deg = 6;
@@ -42,9 +42,9 @@ function App() {
   };
 
   const reset = () => {
-    setHours(0);
-    setMinutes(0);
-    setSeconds(0);
+    setHours(undefined);
+    setMinutes(undefined);
+    setSeconds(undefined);
     setIsRunning(false);
     setOver(false);
   };

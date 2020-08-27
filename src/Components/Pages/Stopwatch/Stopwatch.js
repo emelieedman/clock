@@ -51,8 +51,8 @@ const Stopwatch = ({
       </div>
 
       <div className={styles.startResetButtons}>
-        <Button text="Reset" onClick={reset} />
-        <Button text={isRunning ? "Pause" : "Start"} onClick={toggle} />
+        <Button text="Reset" onClick={() => reset()} />
+        <Button text={isRunning ? "Pause" : "Start"} onClick={() => toggle()} />
       </div>
     </>
   );
