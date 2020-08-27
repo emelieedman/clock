@@ -45,6 +45,13 @@ const Timer = ({
     return () => clearInterval(interval);
   }, [isRunning, seconds, setSeconds, hours, setHours, minutes, setMinutes]);
 
+  const numbers = () => {
+    let number = [];
+    for (let i = 0; i < 60; i++) {
+      return number.push[i];
+    }
+  };
+
   return (
     <>
       <div className={styles.inputFields}>
