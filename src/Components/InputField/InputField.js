@@ -14,7 +14,6 @@ const InputField = (props) => {
         name="inputField"
         onChange={props.onChange}
         value={props.value}
-        min="0"
         placeholder="00"
       ></input>
 

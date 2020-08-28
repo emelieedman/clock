@@ -30,44 +30,46 @@
 }
 
 .menuClosed {
-  background: linear-gradient(180deg, #7b7b7d 0%, #151515 100%);
-
   font-family: roboto;
 
-  height: 100%;
-  width: 0;
   position: fixed;
   z-index: 100;
   top: 0;
-  left: 100vw;
-  background-color: #111;
+  left: 92vw;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  top: 5vh;
 }
 .menuOpen {
-  background: linear-gradient(180deg, #7b7b7d 0%, #151515 100%);
-
   font-family: roboto;
-  height: 100%;
-  width: 50vw;
   position: fixed;
   z-index: 100;
   top: 0;
   left: 50vw;
-  background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  top: 5vh;
 }
+.clockClosed {
+  font-family: roboto;
 
-.link {
-  color: #d0d0d0;
-  padding: 30px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 18px;
-  display: block;
-  transition: 0.3s;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 100vw;
+  overflow-x: hidden;
+  transition: 0.5s;
+  top: 5vh;
+}
+.clockOpen {
+  font-family: roboto;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 50vw;
+  overflow-x: hidden;
+  transition: 0.5s;
+  top: 5vh;
 }
 
 .link:hover {
