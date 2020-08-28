@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./Timer.module.css";
 import Button from "../../Button/Button";
 import InputField from "../../InputField/InputField";
+// import alarm from "../../../Assets/Music_Box-Big_Daddy-1389738694.mp3";
 
 const Timer = ({
   reset,
@@ -49,6 +50,7 @@ const Timer = ({
   }, [
     isRunning,
     setIsRunning,
+    over,
     setOver,
     seconds,
     setSeconds,

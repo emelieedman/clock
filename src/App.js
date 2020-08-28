@@ -7,14 +7,15 @@ import blackBackground from "./Assets/black-bump.svg";
 import { navButtonData } from "./navButtonData";
 import Clock from "./Components/Pages/Clock/Clock";
 import Menu from "./Components/Menu/Menu";
+import Alarm from "./Components/Pages/Alarm/Alarm";
 
 window.navButtonData = navButtonData;
 
 function App() {
   const [isRunning, setIsRunning] = useState(false);
-  const [seconds, setSeconds] = useState(undefined);
-  const [minutes, setMinutes] = useState(undefined);
-  const [hours, setHours] = useState(undefined);
+  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [hours, setHours] = useState(0);
   const [over, setOver] = useState(false);
 
   const deg = 6;
@@ -40,9 +41,9 @@ function App() {
   };
 
   const reset = () => {
-    setHours(undefined);
-    setMinutes(undefined);
-    setSeconds(undefined);
+    setHours(0);
+    setMinutes(0);
+    setSeconds(0);
     setIsRunning(false);
     setOver(false);
   };
@@ -81,17 +82,13 @@ function App() {
           />
           <Route
             exact
-            path="/stopwatch"
+            path="/alarm"
             component={() => (
-              <Stopwatch
-                isRunning={isRunning}
-                reset={reset}
-                toggle={toggle}
+              <Alarm
                 seconds={seconds}
                 setSeconds={setSeconds}
                 minutes={minutes}
                 setMinutes={setMinutes}
-                minTwoDigits={minTwoDigits}
                 hours={hours}
                 setHours={setHours}
               />
@@ -116,6 +113,24 @@ function App() {
                 numbers={numbers}
                 over={over}
                 setOver={setOver}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/stopwatch"
+            component={() => (
+              <Stopwatch
+                isRunning={isRunning}
+                reset={reset}
+                toggle={toggle}
+                seconds={seconds}
+                setSeconds={setSeconds}
+                minutes={minutes}
+                setMinutes={setMinutes}
+                minTwoDigits={minTwoDigits}
+                hours={hours}
+                setHours={setHours}
               />
             )}
           />
