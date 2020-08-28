@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styles from "./App.module.css";
-import Button from "./Components/Button/Button";
 import Stopwatch from "./Components/Pages/Stopwatch/Stopwatch";
 import Timer from "./Components/Pages/Timer/Timer";
-import background from "./Assets/clock-background.svg";
 import blackBackground from "./Assets/black-bump.svg";
 import { navButtonData } from "./navButtonData";
 import Clock from "./Components/Pages/Clock/Clock";
