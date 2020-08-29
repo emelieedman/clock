@@ -45,7 +45,6 @@ const Menu = ({ reset }) => {
       styleOpen: {
         background: "#E3F6F6",
         color: "#646465",
-
         padding: "18px",
         margin: "0",
         textDecoration: "none",
@@ -65,6 +64,8 @@ const Menu = ({ reset }) => {
       styleClosed: {
         padding: "18px",
         background: "#E3F6F6",
+        color: "#646465",
+
         margin: "0",
         textDecoration: "none",
         fontSize: "14px",
@@ -106,6 +107,8 @@ const Menu = ({ reset }) => {
       },
       styleClosed: {
         background: "#FFFAFA",
+        color: "#646465",
+
         margin: "0",
         padding: "18px",
         textDecoration: "none",
@@ -148,6 +151,8 @@ const Menu = ({ reset }) => {
       },
       styleClosed: {
         background: "#E3E3F6",
+        color: "#646465",
+
         margin: "0",
         padding: "18px",
         textDecoration: "none",
@@ -189,6 +194,8 @@ const Menu = ({ reset }) => {
       },
       styleClosed: {
         background: "#E9F6E3",
+        color: "#646465",
+
         margin: "0",
         padding: "18px",
         textDecoration: "none",
