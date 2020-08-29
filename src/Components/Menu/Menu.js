@@ -15,15 +15,27 @@ const Menu = ({ reset }) => {
   };
   const toggleClock = () => {
     setIsClockOpen(!isClockOpen);
+    setIsAlarmOpen(false);
+    setIsTimerOpen(false);
+    setIsStopwatchOpen(false);
   };
   const toggleAlarm = () => {
     setIsAlarmOpen(!isAlarmOpen);
+    setIsClockOpen(false);
+    setIsTimerOpen(false);
+    setIsStopwatchOpen(false);
   };
   const toggleTimer = () => {
     setIsTimerOpen(!isTimerOpen);
+    setIsAlarmOpen(false);
+    setIsClockOpen(false);
+    setIsStopwatchOpen(false);
   };
   const toggleStopwatch = () => {
     setIsStopwatchOpen(!isStopwatchOpen);
+    setIsAlarmOpen(false);
+    setIsClockOpen(false);
+    setIsTimerOpen(false);
   };
 
   const navItems2 = [
@@ -195,6 +207,8 @@ const Menu = ({ reset }) => {
     },
   ];
 
+  console.log("isClockOpen?", isClockOpen);
+
   // const navItems = ["Clock", "Alarm", "Timer", "Stopwatch"];
   return (
     <>
@@ -225,7 +239,9 @@ const Menu = ({ reset }) => {
           style={
             isAlarmOpen ? navItems2[1].styleOpen : navItems2[1].styleClosed
           }
-          onClick={() => toggleAlarm()}
+          onClick={() => {
+            toggleAlarm();
+          }}
         ></Link>
         <Link
           to={navItems2[2].id}
