@@ -30,28 +30,170 @@ const Menu = ({ reset }) => {
       id: "clock",
       onclick: toggleClock,
       classname: "clock",
-      background: "#E3F6F6",
+      styleOpen: {
+        background: "#E3F6F6",
+        margin: "0",
+        color: "#d0d0d0",
+        padding: "30px 8px 8px 32px",
+        textDecoration: "none",
+        fontSize: "18px",
+        display: "block",
+        transition: "0.3s",
+        position: "fixed",
+        width: "212px",
+        height: "50px",
+        left: "50vw",
+        top: "25px",
+
+        boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
+        borderRadius: "30px 0px 0px 30px",
+      },
+      styleClosed: {
+        background: "#E3F6F6",
+        margin: "0",
+        color: "#d0d0d0",
+        padding: "30px 8px 8px 32px",
+        textDecoration: "none",
+        fontSize: "18px",
+        display: "block",
+        transition: "0.3s",
+        position: "fixed",
+        width: "212px",
+        height: "50px",
+        left: "80vw",
+        top: "25px",
+
+        boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
+        borderRadius: "30px 0px 0px 30px",
+      },
     },
+
     {
       id: "alarm",
-      onclick: toggleAlarm,
+      onclick: toggleClass,
       classname: "alarm",
-      background: "#FFFAFA",
+      styleOpen: {
+        background: "#FFFAFA",
+        margin: "0",
+        color: "#d0d0d0",
+        padding: "30px 8px 8px 32px",
+        textDecoration: "none",
+        fontSize: "18px",
+        display: "block",
+        transition: "0.3s",
+        position: "fixed",
+        width: "212px",
+        height: "50px",
+        left: "50vw",
+        top: "80px",
+
+        boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
+        borderRadius: "30px 0px 0px 30px",
+      },
+      styleClosed: {
+        background: "#FFFAFA",
+        margin: "0",
+        color: "#d0d0d0",
+        padding: "30px 8px 8px 32px",
+        textDecoration: "none",
+        fontSize: "18px",
+        display: "block",
+        transition: "0.3s",
+        position: "fixed",
+        width: "212px",
+        height: "50px",
+        left: "80vw",
+        top: "80px",
+
+        boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
+        borderRadius: "30px 0px 0px 30px",
+      },
     },
     {
       id: "timer",
-      onclick: toggleTimer,
+      onclick: toggleClass,
       classname: "timer",
-      background: "#E3E3F6",
+      styleOpen: {
+        background: "#E3E3F6",
+        margin: "0",
+        color: "#d0d0d0",
+        padding: "30px 8px 8px 32px",
+        textDecoration: "none",
+        fontSize: "18px",
+        display: "block",
+        transition: "0.3s",
+        position: "fixed",
+        width: "212px",
+        height: "50px",
+        left: "50vw",
+        top: "135px",
+
+        boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
+        borderRadius: "30px 0px 0px 30px",
+      },
+      styleClosed: {
+        background: "#E3E3F6",
+        margin: "0",
+        color: "#d0d0d0",
+        padding: "30px 8px 8px 32px",
+        textDecoration: "none",
+        fontSize: "18px",
+        display: "block",
+        transition: "0.3s",
+        position: "fixed",
+        width: "212px",
+        height: "50px",
+        left: "80vw",
+        top: "135px",
+
+        boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
+        borderRadius: "30px 0px 0px 30px",
+      },
     },
     {
       id: "stopwatch",
-      onclick: toggleStopwatch,
+      onclick: toggleClass,
       classname: "stopwatch",
-      background: "#E9F6E3",
-      left: "40vw",
+      styleOpen: {
+        background: "#E9F6E3",
+        margin: "0",
+        color: "#d0d0d0",
+        padding: "30px 8px 8px 32px",
+        textDecoration: "none",
+        fontSize: "18px",
+        display: "block",
+        transition: "0.3s",
+        position: "fixed",
+        width: "212px",
+        height: "50px",
+        left: "50vw",
+        top: "190px",
+
+        boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
+        borderRadius: "30px 0px 0px 30px",
+      },
+      styleClosed: {
+        background: "#E9F6E3",
+        margin: "0",
+        color: "#d0d0d0",
+        padding: "30px 8px 8px 32px",
+        textDecoration: "none",
+        fontSize: "18px",
+        display: "block",
+        transition: "0.3s",
+        position: "fixed",
+        width: "212px",
+        height: "50px",
+        left: "80vw",
+        top: "190px",
+
+        boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
+        borderRadius: "30px 0px 0px 30px",
+      },
     },
   ];
+
+  console.log(navItems2);
 
   // const navItems = ["Clock", "Alarm", "Timer", "Stopwatch"];
   return (
@@ -60,8 +202,7 @@ const Menu = ({ reset }) => {
         {navItems2.map((item) => (
           <LinkComponent
             key={item.id}
-            classname={item.classname}
-            background={item.background}
+            style={open ? item.styleOpen : item.styleClosed}
             text={item.id}
             id={item.id}
             onclick={item.onclick}

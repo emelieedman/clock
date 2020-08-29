@@ -9,13 +9,15 @@ const LinkComponent = ({
   text,
   onclick,
   background,
-  left,
+  style,
+  // classname,
 }) => {
   return (
     <Link
-      style={{ background: `${background}` }}
+      // style={{ background: `${background}` }}
       // put classname in the item object and pass in as props
-      className={styles.link}
+      classname={styles.link}
+      style={style}
       id={id}
       to={id}
       onClick={() => {
