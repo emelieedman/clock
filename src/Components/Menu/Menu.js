@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Menu.module.css";
 import LinkComponent from "../LinkComponent/LinkComponent";
+import { Link } from "react-router-dom";
 
 const Menu = ({ reset }) => {
   const [open, setOpen] = useState(false);
@@ -70,7 +71,7 @@ const Menu = ({ reset }) => {
 
     {
       id: "alarm",
-      onclick: toggleClass,
+      onclick: toggleAlarm,
       classname: "alarm",
       styleOpen: {
         background: "#FFFAFA",
@@ -109,9 +110,10 @@ const Menu = ({ reset }) => {
         borderRadius: "30px 0px 0px 30px",
       },
     },
+
     {
       id: "timer",
-      onclick: toggleClass,
+      onclick: toggleTimer,
       classname: "timer",
       styleOpen: {
         background: "#E3E3F6",
@@ -152,7 +154,7 @@ const Menu = ({ reset }) => {
     },
     {
       id: "stopwatch",
-      onclick: toggleClass,
+      onclick: toggleStopwatch,
       classname: "stopwatch",
       styleOpen: {
         background: "#E9F6E3",
@@ -193,13 +195,11 @@ const Menu = ({ reset }) => {
     },
   ];
 
-  console.log(navItems2);
-
   // const navItems = ["Clock", "Alarm", "Timer", "Stopwatch"];
   return (
     <>
       <div className={open ? styles.menuOpen : styles.menuClosed}>
-        {navItems2.map((item) => (
+        {/* {navItems2.map((item) => (
           <LinkComponent
             key={item.id}
             style={open ? item.styleOpen : item.styleClosed}
@@ -209,7 +209,40 @@ const Menu = ({ reset }) => {
             toggleClass={toggleClass}
             reset={reset}
           ></LinkComponent>
-        ))}
+        ))} */}
+        <Link
+          to={navItems2[0].id}
+          key={navItems2[0].id}
+          className={styles.link}
+          style={
+            isClockOpen ? navItems2[0].styleOpen : navItems2[0].styleClosed
+          }
+          onClick={() => toggleClock()}
+        ></Link>
+        <Link
+          to={navItems2[1].id}
+          key={navItems2[1].id}
+          style={
+            isAlarmOpen ? navItems2[1].styleOpen : navItems2[1].styleClosed
+          }
+          onClick={() => toggleAlarm()}
+        ></Link>
+        <Link
+          to={navItems2[2].id}
+          key={navItems2[2].id}
+          style={
+            isTimerOpen ? navItems2[2].styleOpen : navItems2[2].styleClosed
+          }
+          onClick={() => toggleTimer()}
+        ></Link>
+        <Link
+          to={navItems2[3].id}
+          key={navItems2[3].id}
+          style={
+            isStopwatchOpen ? navItems2[3].styleOpen : navItems2[3].styleClosed
+          }
+          onClick={() => toggleStopwatch()}
+        ></Link>
       </div>
     </>
   );

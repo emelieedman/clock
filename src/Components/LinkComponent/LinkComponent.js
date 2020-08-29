@@ -10,7 +10,7 @@ const LinkComponent = ({
   onclick,
   background,
   style,
-  // classname,
+  classname,
 }) => {
   return (
     <Link
