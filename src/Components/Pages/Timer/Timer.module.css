@@ -3,8 +3,8 @@
   grid-row-start: 2;
   align-self: flex-end;
   z-index: 10;
-  justify-content: space-evenly;
-  padding-left: 20px;
+  justify-content: center;
+  padding-left: 15px;
 }
 .startResetButtons {
   z-index: 10;
@@ -14,4 +14,10 @@
   justify-content: space-around;
   align-self: flex-start;
   padding: 10px;
+}
+
+.popUp {
+  z-index: 200;
+  width: 100vw;
+  height: 100vh;
 }

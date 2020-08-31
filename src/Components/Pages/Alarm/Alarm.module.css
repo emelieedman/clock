@@ -3,7 +3,7 @@
   padding: 0;
   display: flex;
   justify-self: center;
-  align-self: center;
+  align-self: flex-end;
   grid-row-start: 2;
 
   font-family: Roboto;
@@ -15,4 +15,14 @@
   background: none;
   border: none;
   color: #d0d0d0;
+}
+
+.newAlarm {
+  grid-row-start: 4;
+  display: flex;
+  justify-self: center;
+}
+
+.saveButton {
+  cursor: pointer;
 }

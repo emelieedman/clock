@@ -1,19 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./Clock.module.css";
 
-const Clock = ({
-  hours,
-  setHours,
-  minutes,
-  setMinutes,
-  seconds,
-  setSeconds,
-}) => {
-  const date = new Date();
-  const h = date.getHours();
-  const min = date.getMinutes();
-  const sec = date.getSeconds();
-
+const Clock = ({ setHours, setMinutes, setSeconds, h, min, sec, date }) => {
   useEffect(() => {
     let interval = null;
     interval = setInterval(() => {
