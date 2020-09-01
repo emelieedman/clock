@@ -11,12 +11,7 @@ const AlarmPopUp = ({ setOver, over }) => {
   return (
     <>
       <div className={styles.wrapperOpen}>
-        <h1 className={styles.h1}>
-          Time's up!{" "}
-          <span role="img" aria-label="peace sign" className={styles.peace}>
-            &#9996;
-          </span>
-        </h1>
+        <h1 className={styles.h1}>Time's up! </h1>
         {/* <p className={styles.h2}>snooze</p>
         <div className={styles.buttonSelect}>
           <ButtonSelect
