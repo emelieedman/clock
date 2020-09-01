@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./ButtonSelect.module.css";
 
-const ButtonSelect = () => {
+const ButtonSelect = ({ style }) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const toggleSelectButton = () => {
@@ -12,7 +12,8 @@ const ButtonSelect = () => {
   return (
     <>
       <div
-        className={isSelected ? styles.backgroundSelected : styles.background}
+        style={isSelected ? style : null}
+        className={styles.background}
         onClick={() => toggleSelectButton()}
       >
         <div

@@ -1,9 +1,10 @@
 .wrapperOpen {
+  z-index: 200;
   position: absolute;
   top: 0;
   left: 0;
   display: grid;
-  grid-template-rows: 30vh 10vh 10vh 50vh;
+  grid-template-rows: 30vh 8vh 10vh 52vh;
   width: 100vw;
   height: 100vh;
 
@@ -11,17 +12,16 @@
 }
 
 .wrapperClosed {
+  z-index: 200;
   position: absolute;
-  display: grid;
-  grid-template-rows: 30vh 10vh 10vh 50vh;
   top: 100vh;
   left: 0;
+  display: grid;
+  grid-template-rows: 30vh 10vh 10vh 50vh;
   width: 100vw;
-  height: 100vh;
 
-  background: rgba(121, 121, 123, 0.9);
-  overflow-x: hidden;
-  transition: 0.5s;
+  background: rgba(21, 21, 21, 0.7);
+  transition: 1s;
 }
 
 .h1 {
@@ -42,6 +42,11 @@
 
 .buttonClose {
   justify-self: center;
+}
+
+.peace {
+  display: inline;
+  font-size: 46px;
 }
 
 @keyframes slide-bottom {

@@ -152,6 +152,8 @@ function App() {
           />
         </Switch>
 
+        <div className={styles.backgroundOverlay}></div>
+
         <img
           src={blackBackground}
           alt=""

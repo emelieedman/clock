@@ -15,9 +15,3 @@
   align-self: flex-start;
   padding: 10px;
 }
-
-.popUp {
-  z-index: 200;
-  width: 100vw;
-  height: 100vh;
-}
