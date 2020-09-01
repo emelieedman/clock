@@ -66,7 +66,7 @@ const Menu = ({ reset }) => {
       styleClosed: {
         zIndex: 10,
         padding: "18px",
-        background: "#E3F6F6",
+        // background: "#E3F6F6",
         // color: "#718E8E",
         color: "black",
 
@@ -196,7 +196,7 @@ const Menu = ({ reset }) => {
       classname: "stopwatch",
       styleOpen: {
         zIndex: 10,
-        // background: "#E9F6E3",
+        background: "#E9F6E3",
         // color: "#75886C",
         color: "black",
 
