@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./AlarmPopUp.module.css";
-import ButtonSelect from "../ButtonSelect/ButtonSelect";
+// import ButtonSelect from "../ButtonSelect/ButtonSelect";
 import ButtonClose from "../ButtonClose/ButtonClose";
 
 const AlarmPopUp = ({ setOver, over }) => {
@@ -12,7 +12,10 @@ const AlarmPopUp = ({ setOver, over }) => {
     <>
       <div className={styles.wrapperOpen}>
         <h1 className={styles.h1}>
-          Time's up! <section className={styles.peace}>&#9996;</section>
+          Time's up!{" "}
+          <span role="img" aria-label="peace sign" className={styles.peace}>
+            &#9996;
+          </span>
         </h1>
         {/* <p className={styles.h2}>snooze</p>
         <div className={styles.buttonSelect}>

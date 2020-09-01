@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import styles from "./Menu.module.css";
 
 const Menu = ({ reset }) => {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const [isClockOpen, setIsClockOpen] = useState(true);
   const [isAlarmOpen, setIsAlarmOpen] = useState(false);
   const [isTimerOpen, setIsTimerOpen] = useState(false);
   const [isStopwatchOpen, setIsStopwatchOpen] = useState(false);
 
-  const toggleClass = () => {
-    setOpen(!open);
-  };
+  // const toggleClass = () => {
+  //   setOpen(!open);
+  // };
   const toggleClock = () => {
     setIsClockOpen(!isClockOpen);
     setIsAlarmOpen(false);
@@ -43,6 +43,7 @@ const Menu = ({ reset }) => {
       onclick: toggleClock,
       classname: "clock",
       styleOpen: {
+        zIndex: 10,
         background: "#E3F6F6",
         color: "#646465",
         padding: "18px",
@@ -62,6 +63,7 @@ const Menu = ({ reset }) => {
         borderRadius: "30px 0px 0px 30px",
       },
       styleClosed: {
+        zIndex: 10,
         padding: "18px",
         background: "#E3F6F6",
         color: "#646465",
@@ -87,6 +89,7 @@ const Menu = ({ reset }) => {
       onclick: toggleAlarm,
       classname: "alarm",
       styleOpen: {
+        zIndex: 10,
         background: "#FFFAFA",
         color: "#646465",
 
@@ -106,6 +109,7 @@ const Menu = ({ reset }) => {
         borderRadius: "30px 0px 0px 30px",
       },
       styleClosed: {
+        zIndex: 10,
         background: "#FFFAFA",
         color: "#646465",
 
@@ -131,6 +135,7 @@ const Menu = ({ reset }) => {
       onclick: toggleTimer,
       classname: "timer",
       styleOpen: {
+        zIndex: 10,
         background: "#E3E3F6",
         color: "#646465",
 
@@ -150,6 +155,7 @@ const Menu = ({ reset }) => {
         borderRadius: "30px 0px 0px 30px",
       },
       styleClosed: {
+        zIndex: 10,
         background: "#E3E3F6",
         color: "#646465",
 
@@ -174,6 +180,7 @@ const Menu = ({ reset }) => {
       onclick: toggleStopwatch,
       classname: "stopwatch",
       styleOpen: {
+        zIndex: 10,
         background: "#E9F6E3",
         color: "#646465",
 
@@ -193,6 +200,7 @@ const Menu = ({ reset }) => {
         borderRadius: "30px 0px 0px 30px",
       },
       styleClosed: {
+        zIndex: 10,
         background: "#E9F6E3",
         color: "#646465",
 
@@ -216,61 +224,55 @@ const Menu = ({ reset }) => {
 
   return (
     <>
-      <div className={open ? styles.menuOpen : styles.menuClosed}>
-        <Link
-          to={navItems2[0].id}
-          key={navItems2[0].id}
-          className={styles.link}
-          style={
-            isClockOpen ? navItems2[0].styleOpen : navItems2[0].styleClosed
-          }
-          onClick={() => {
-            toggleClock();
-          }}
-        >
-          {isClockOpen ? navItems2[0].id : null}
-        </Link>
+      {/* <div className={open ? styles.menuOpen : styles.menuClosed}> */}
+      <Link
+        to={navItems2[0].id}
+        key={navItems2[0].id}
+        className={styles.link}
+        style={isClockOpen ? navItems2[0].styleOpen : navItems2[0].styleClosed}
+        onClick={() => {
+          toggleClock();
+        }}
+      >
+        {isClockOpen ? navItems2[0].id : null}
+      </Link>
 
-        <Link
-          to={navItems2[1].id}
-          key={navItems2[1].id}
-          style={
-            isAlarmOpen ? navItems2[1].styleOpen : navItems2[1].styleClosed
-          }
-          onClick={() => {
-            toggleAlarm();
-            reset();
-          }}
-        >
-          {isAlarmOpen ? navItems2[1].id : null}
-        </Link>
-        <Link
-          to={navItems2[2].id}
-          key={navItems2[2].id}
-          style={
-            isTimerOpen ? navItems2[2].styleOpen : navItems2[2].styleClosed
-          }
-          onClick={() => {
-            toggleTimer();
-            reset();
-          }}
-        >
-          {isTimerOpen ? navItems2[2].id : null}
-        </Link>
-        <Link
-          to={navItems2[3].id}
-          key={navItems2[3].id}
-          style={
-            isStopwatchOpen ? navItems2[3].styleOpen : navItems2[3].styleClosed
-          }
-          onClick={() => {
-            toggleStopwatch();
-            reset();
-          }}
-        >
-          {isStopwatchOpen ? navItems2[3].id : null}
-        </Link>
-      </div>
+      <Link
+        to={navItems2[1].id}
+        key={navItems2[1].id}
+        style={isAlarmOpen ? navItems2[1].styleOpen : navItems2[1].styleClosed}
+        onClick={() => {
+          toggleAlarm();
+          reset();
+        }}
+      >
+        {isAlarmOpen ? navItems2[1].id : null}
+      </Link>
+      <Link
+        to={navItems2[2].id}
+        key={navItems2[2].id}
+        style={isTimerOpen ? navItems2[2].styleOpen : navItems2[2].styleClosed}
+        onClick={() => {
+          toggleTimer();
+          reset();
+        }}
+      >
+        {isTimerOpen ? navItems2[2].id : null}
+      </Link>
+      <Link
+        to={navItems2[3].id}
+        key={navItems2[3].id}
+        style={
+          isStopwatchOpen ? navItems2[3].styleOpen : navItems2[3].styleClosed
+        }
+        onClick={() => {
+          toggleStopwatch();
+          reset();
+        }}
+      >
+        {isStopwatchOpen ? navItems2[3].id : null}
+      </Link>
+      {/* </div> */}
     </>
   );
 };
