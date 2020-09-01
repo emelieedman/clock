@@ -45,7 +45,8 @@ const Menu = ({ reset }) => {
       styleOpen: {
         zIndex: 10,
         background: "#E3F6F6",
-        color: "#718E8E",
+        // color: "#718E8E",
+        color: "black",
         padding: "18px",
         margin: "0",
         textDecoration: "none",
@@ -66,7 +67,8 @@ const Menu = ({ reset }) => {
         zIndex: 10,
         padding: "18px",
         background: "#E3F6F6",
-        color: "#718E8E",
+        // color: "#718E8E",
+        color: "black",
 
         margin: "0",
         textDecoration: "none",
@@ -74,12 +76,15 @@ const Menu = ({ reset }) => {
         display: "block",
         transition: "0.3s",
         position: "fixed",
-        width: "8vw",
+        width: "15vw",
         height: "50px",
-        left: "92vw",
+        left: "85vw",
         top: "25px",
 
+        background: "rgba(74, 74, 74, 0.66)",
         boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
+
+        // boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
         borderRadius: "30px 0px 0px 30px",
       },
     },
@@ -91,7 +96,8 @@ const Menu = ({ reset }) => {
       styleOpen: {
         zIndex: 10,
         background: "#FFEDED",
-        color: "#A18585",
+        // color: "#A18585",
+        color: "black",
 
         margin: "0",
         padding: "18px",
@@ -110,8 +116,9 @@ const Menu = ({ reset }) => {
       },
       styleClosed: {
         zIndex: 10,
-        background: "#FFEDED",
-        color: "#A18585",
+        // background: "#FFEDED",
+        // color: "#A18585",
+        color: "black",
 
         margin: "0",
         padding: "18px",
@@ -120,12 +127,15 @@ const Menu = ({ reset }) => {
         display: "block",
         transition: "0.3s",
         position: "fixed",
-        width: "8vw",
+        width: "15vw",
         height: "50px",
-        left: "92vw",
+        left: "85vw",
         top: "80px",
 
+        background: "rgba(74, 74, 74, 0.66)",
         boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
+
+        // boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
         borderRadius: "30px 0px 0px 30px",
       },
     },
@@ -137,7 +147,8 @@ const Menu = ({ reset }) => {
       styleOpen: {
         zIndex: 10,
         background: "#E3E3F6",
-        color: "#6D6D8C",
+        // color: "#6D6D8C",
+        color: "black",
 
         margin: "0",
         padding: "18px",
@@ -156,8 +167,9 @@ const Menu = ({ reset }) => {
       },
       styleClosed: {
         zIndex: 10,
-        background: "#E3E3F6",
-        color: "#6D6D8C",
+        // background: "#E3E3F6",
+        // color: "#6D6D8C",
+        color: "black",
 
         margin: "0",
         padding: "18px",
@@ -166,12 +178,15 @@ const Menu = ({ reset }) => {
         display: "block",
         transition: "0.3s",
         position: "fixed",
-        width: "8vw",
+        width: "15vw",
         height: "50px",
-        left: "92vw",
+        left: "85vw",
         top: "135px",
 
+        background: "rgba(74, 74, 74, 0.66)",
         boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
+
+        // boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
         borderRadius: "30px 0px 0px 30px",
       },
     },
@@ -182,7 +197,8 @@ const Menu = ({ reset }) => {
       styleOpen: {
         zIndex: 10,
         background: "#E9F6E3",
-        color: "#75886C",
+        // color: "#75886C",
+        color: "black",
 
         margin: "0",
         padding: "18px",
@@ -201,8 +217,9 @@ const Menu = ({ reset }) => {
       },
       styleClosed: {
         zIndex: 10,
-        background: "#E9F6E3",
-        color: "#75886C",
+        // background: "#E9F6E3",
+        // color: "#75886C",
+        color: "black",
 
         margin: "0",
         padding: "18px",
@@ -211,12 +228,15 @@ const Menu = ({ reset }) => {
         display: "block",
         transition: "0.3s",
         position: "fixed",
-        width: "8vw",
+        width: "15vw",
         height: "50px",
-        left: "92vw",
+        left: "85vw",
         top: "190px",
 
+        background: "rgba(74, 74, 74, 0.66)",
         boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
+
+        // boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
         borderRadius: "30px 0px 0px 30px",
       },
     },
