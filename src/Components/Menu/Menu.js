@@ -196,7 +196,7 @@ const Menu = ({ reset }) => {
       classname: "stopwatch",
       styleOpen: {
         zIndex: 10,
-        background: "#E9F6E3",
+        // background: "#E9F6E3",
         // color: "#75886C",
         color: "black",
 
