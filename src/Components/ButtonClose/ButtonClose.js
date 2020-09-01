@@ -5,7 +5,7 @@ import ButtonSelect from "../ButtonSelect/ButtonSelect";
 const ButtonClose = ({ onclick, style }) => {
   return (
     <button className={styles.button} style={style} onClick={onclick}>
-      Close
+      close
     </button>
   );
 };

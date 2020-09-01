@@ -14,7 +14,7 @@ const AlarmPopUp = ({ setOver, over }) => {
         <h1 className={styles.h1}>
           Time's up! <section className={styles.peace}>&#9996;</section>
         </h1>
-        <p className={styles.h2}>snooze</p>
+        {/* <p className={styles.h2}>snooze</p>
         <div className={styles.buttonSelect}>
           <ButtonSelect
             style={{
@@ -25,7 +25,7 @@ const AlarmPopUp = ({ setOver, over }) => {
               borderRadius: "30px",
             }}
           />
-        </div>
+        </div> */}
         <div className={styles.buttonClose}>
           <ButtonClose
             style={{ background: "#E3E3F6" }}

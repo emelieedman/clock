@@ -24,13 +24,14 @@ const Alarm = () => {
         </div>
       </div>
       {saveAlarm ? (
-        <SetAlarms
-          className={styles.newAlarm}
-          saveAlarm={saveAlarm}
-          setSaveAlarm={setSaveAlarm}
-          newAlarm={newAlarm}
-          setNewAlarm={setNewAlarm}
-        />
+        <div className={styles.newAlarm}>
+          <SetAlarms
+            saveAlarm={saveAlarm}
+            setSaveAlarm={setSaveAlarm}
+            newAlarm={newAlarm}
+            setNewAlarm={setNewAlarm}
+          />
+        </div>
       ) : null}
     </>
   );
