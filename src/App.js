@@ -18,6 +18,11 @@ function App() {
   const [hours, setHours] = useState(0);
   const [over, setOver] = useState(false);
 
+  const date = new Date();
+  const h = date.getHours();
+  const min = date.getMinutes();
+  const sec = date.getSeconds();
+
   const deg = 6;
   const hourDeg = 30;
 
@@ -63,6 +68,10 @@ function App() {
                 setMinutes={setMinutes}
                 hours={hours}
                 setHours={setHours}
+                h={h}
+                min={min}
+                sec={sec}
+                date={date}
               />
             )}
           />
@@ -77,6 +86,10 @@ function App() {
                 setMinutes={setMinutes}
                 hours={hours}
                 setHours={setHours}
+                h={h}
+                min={min}
+                sec={sec}
+                date={date}
               />
             )}
           />
@@ -91,6 +104,9 @@ function App() {
                 setMinutes={setMinutes}
                 hours={hours}
                 setHours={setHours}
+                h={h}
+                min={min}
+                sec={sec}
               />
             )}
           />
@@ -135,6 +151,8 @@ function App() {
             )}
           />
         </Switch>
+
+        <div className={styles.backgroundOverlay}></div>
 
         <img
           src={blackBackground}

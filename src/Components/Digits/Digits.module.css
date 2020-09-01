@@ -1,21 +1,11 @@
-.digitalBox {
+.nr {
   margin: 0;
+  padding-left: 7px;
+  padding-right: 7px;
 
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 36px;
   line-height: 56px;
-}
-
-.timeType {
-  margin: 0;
-  padding: 0;
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 56px;
-  color: #aeaec0;
 }

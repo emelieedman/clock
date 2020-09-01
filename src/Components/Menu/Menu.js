@@ -4,7 +4,7 @@ import styles from "./Menu.module.css";
 
 const Menu = ({ reset }) => {
   const [open, setOpen] = useState(false);
-  const [isClockOpen, setIsClockOpen] = useState(false);
+  const [isClockOpen, setIsClockOpen] = useState(true);
   const [isAlarmOpen, setIsAlarmOpen] = useState(false);
   const [isTimerOpen, setIsTimerOpen] = useState(false);
   const [isStopwatchOpen, setIsStopwatchOpen] = useState(false);
@@ -226,7 +226,6 @@ const Menu = ({ reset }) => {
           }
           onClick={() => {
             toggleClock();
-            reset();
           }}
         >
           {isClockOpen ? navItems2[0].id : null}

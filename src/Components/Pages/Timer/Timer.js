@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./Timer.module.css";
 import Button from "../../Button/Button";
 import InputField from "../../InputField/InputField";
+import AlarmPopUp from "../../AlarmPopUp/AlarmPopUp";
 // import alarm from "../../../Assets/Music_Box-Big_Daddy-1389738694.mp3";
 
 const Timer = ({
@@ -18,14 +19,16 @@ const Timer = ({
   minTwoDigits,
   over,
   setOver,
+  toggleSelectButton,
 }) => {
+  console.log("over", over);
   useEffect(() => {
     let interval = null;
 
     if (isRunning) {
       interval = setInterval(() => {
         if (seconds > 0) {
-          setSeconds(seconds - 1);
+          setSeconds(() => seconds - 1);
         } else if (seconds === 0 && minutes > 0) {
           setMinutes(minutes - 1);
           setSeconds(59);
@@ -34,10 +37,10 @@ const Timer = ({
           setMinutes(59);
           setSeconds(59);
         } else if (
-          isRunning === true &&
-          seconds === 0 &&
-          minutes === 0 &&
-          hours === 0
+          (isRunning === true && seconds === 0) ||
+          (seconds === null && minutes === 0) ||
+          (minutes === null && hours === 0) ||
+          null
         ) {
           setOver(true);
           setIsRunning(false);
@@ -60,32 +63,24 @@ const Timer = ({
     setMinutes,
   ]);
 
-  if (over === true) {
-    setOver(!over);
-    alert("time's up!");
-  }
-
   return (
     <>
       <div className={styles.inputFields}>
         <InputField
-          timeType="hours"
           onChange={(event) => setHours(event.target.value)}
-          value={hours}
+          value={minTwoDigits(hours)}
         />
         <InputField
-          timeType="min"
           onChange={(event) => setMinutes(event.target.value)}
-          value={minutes}
+          value={minTwoDigits(minutes)}
         />
         <InputField
-          timeType="sec"
           onChange={(event) => setSeconds(event.target.value)}
-          value={seconds}
+          value={minTwoDigits(seconds)}
         />
       </div>
       <div className={styles.startResetButtons}>
-        <Button text="Reset" onClick={reset} />
+        <Button text="Reset" onClick={() => reset()} />
         <Button
           text={isRunning ? "Pause" : "Start"}
           onClick={() => {
@@ -93,6 +88,11 @@ const Timer = ({
           }}
         />
       </div>
+      {over ? (
+        <div className={styles.popUp}>
+          <AlarmPopUp setOver={setOver} over={over} />
+        </div>
+      ) : null}
     </>
   );
 };

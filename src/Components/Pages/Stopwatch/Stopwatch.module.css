@@ -3,7 +3,9 @@
   grid-row-start: 2;
   align-self: flex-end;
   z-index: 10;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-content: center;
+  /* justify-content: space-evenly; */
   padding-left: 10vw;
   padding-right: 10vw;
 }

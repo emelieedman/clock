@@ -1,4 +1,13 @@
 .button {
+  cursor: pointer;
+  /* dark-button */
+
+  background: #151515;
+  /* dark-button */
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 6px 6px 13px #000000,
+    inset -4px -5px 12px #000000, inset 4px 6px 6px #1b1b1c;
+
   display: flex;
   align-self: center;
   justify-content: center;
@@ -7,9 +16,7 @@
   width: 60px;
   height: 60px;
   border-radius: 100%;
-  background: #282829;
-  box-shadow: 4px 5px 6px #171717, -4px -4px 6px #323233,
-    inset -4px -4px 6px #171717, inset 4px 4px 6px #323233;
+
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
