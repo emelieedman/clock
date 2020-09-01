@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Alarm.module.css";
 import SetAlarms from "./SetAlarms";
 
 const Alarm = () => {
   const [newAlarm, setNewAlarm] = useState(null);
   const [saveAlarm, setSaveAlarm] = useState(null);
-  const [timeLeft, setTimeLeft] = useState();
+  // const [timeLeft, setTimeLeft] = useState();
 
   return (
     <>
