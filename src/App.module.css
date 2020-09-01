@@ -1,7 +1,7 @@
 * {
   margin: 0;
   overflow: hidden;
-  font-family: "Open Sans", sans-serif;
+  font-family: "roboto", sans-serif;
 }
 
 .App {
@@ -9,7 +9,6 @@
   color: #d0d0d0;
   display: grid;
   grid-template-rows: 10vh 10vh 50vh repeat(2, 15vh);
-  font-family: Roboto;
 }
 
 .backgroundOverlay {

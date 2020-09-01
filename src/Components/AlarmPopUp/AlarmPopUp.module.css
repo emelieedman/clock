@@ -11,19 +11,6 @@
   background: rgba(21, 21, 21, 0.7);
 }
 
-.wrapperClosed {
-  z-index: 200;
-  position: absolute;
-  top: 100vh;
-  left: 0;
-  display: grid;
-  grid-template-rows: 30vh 10vh 10vh 50vh;
-  width: 100vw;
-
-  background: rgba(21, 21, 21, 0.7);
-  transition: 1s;
-}
-
 .h1 {
   justify-self: center;
   align-self: flex-end;
@@ -44,11 +31,6 @@
 .buttonClose {
   justify-self: center;
   grid-row-start: 4;
-}
-
-.peace {
-  display: inline;
-  font-size: 46px;
 }
 
 @keyframes slide-bottom {

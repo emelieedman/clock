@@ -45,7 +45,7 @@ const Menu = ({ reset }) => {
       styleOpen: {
         zIndex: 10,
         background: "#E3F6F6",
-        color: "#646465",
+        color: "#718E8E",
         padding: "18px",
         margin: "0",
         textDecoration: "none",
@@ -66,7 +66,7 @@ const Menu = ({ reset }) => {
         zIndex: 10,
         padding: "18px",
         background: "#E3F6F6",
-        color: "#646465",
+        color: "#718E8E",
 
         margin: "0",
         textDecoration: "none",
@@ -90,8 +90,8 @@ const Menu = ({ reset }) => {
       classname: "alarm",
       styleOpen: {
         zIndex: 10,
-        background: "#FFFAFA",
-        color: "#646465",
+        background: "#FFEDED",
+        color: "#A18585",
 
         margin: "0",
         padding: "18px",
@@ -110,8 +110,8 @@ const Menu = ({ reset }) => {
       },
       styleClosed: {
         zIndex: 10,
-        background: "#FFFAFA",
-        color: "#646465",
+        background: "#FFEDED",
+        color: "#A18585",
 
         margin: "0",
         padding: "18px",
@@ -137,7 +137,7 @@ const Menu = ({ reset }) => {
       styleOpen: {
         zIndex: 10,
         background: "#E3E3F6",
-        color: "#646465",
+        color: "#6D6D8C",
 
         margin: "0",
         padding: "18px",
@@ -157,7 +157,7 @@ const Menu = ({ reset }) => {
       styleClosed: {
         zIndex: 10,
         background: "#E3E3F6",
-        color: "#646465",
+        color: "#6D6D8C",
 
         margin: "0",
         padding: "18px",
@@ -182,7 +182,7 @@ const Menu = ({ reset }) => {
       styleOpen: {
         zIndex: 10,
         background: "#E9F6E3",
-        color: "#646465",
+        color: "#75886C",
 
         margin: "0",
         padding: "18px",
@@ -202,7 +202,7 @@ const Menu = ({ reset }) => {
       styleClosed: {
         zIndex: 10,
         background: "#E9F6E3",
-        color: "#646465",
+        color: "#75886C",
 
         margin: "0",
         padding: "18px",
