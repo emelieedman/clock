@@ -43,6 +43,7 @@ const Menu = ({ reset }) => {
       onclick: toggleClock,
       classname: "clock",
       styleOpen: {
+        outline: "none",
         zIndex: 10,
         background: "#E3F6F6",
         // color: "#718E8E",
@@ -64,6 +65,7 @@ const Menu = ({ reset }) => {
         borderRadius: "30px 0px 0px 30px",
       },
       styleClosed: {
+        outline: "none",
         zIndex: 10,
         padding: "18px",
         // background: "#E3F6F6",
@@ -94,6 +96,8 @@ const Menu = ({ reset }) => {
       onclick: toggleAlarm,
       classname: "alarm",
       styleOpen: {
+        outline: "none",
+
         zIndex: 10,
         background: "#FFEDED",
         // color: "#A18585",
@@ -115,6 +119,8 @@ const Menu = ({ reset }) => {
         borderRadius: "30px 0px 0px 30px",
       },
       styleClosed: {
+        outline: "none",
+
         zIndex: 10,
         // background: "#FFEDED",
         // color: "#A18585",
@@ -145,6 +151,8 @@ const Menu = ({ reset }) => {
       onclick: toggleTimer,
       classname: "timer",
       styleOpen: {
+        outline: "none",
+
         zIndex: 10,
         background: "#E3E3F6",
         // color: "#6D6D8C",
@@ -166,6 +174,8 @@ const Menu = ({ reset }) => {
         borderRadius: "30px 0px 0px 30px",
       },
       styleClosed: {
+        outline: "none",
+
         zIndex: 10,
         // background: "#E3E3F6",
         // color: "#6D6D8C",
@@ -195,6 +205,8 @@ const Menu = ({ reset }) => {
       onclick: toggleStopwatch,
       classname: "stopwatch",
       styleOpen: {
+        outline: "none",
+
         zIndex: 10,
         background: "#E9F6E3",
         // color: "#75886C",
@@ -216,6 +228,8 @@ const Menu = ({ reset }) => {
         borderRadius: "30px 0px 0px 30px",
       },
       styleClosed: {
+        outline: "none",
+
         zIndex: 10,
         // background: "#E9F6E3",
         // color: "#75886C",
