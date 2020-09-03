@@ -81,7 +81,7 @@ const Menu = ({ reset }) => {
         left: "85vw",
         top: "25px",
 
-        background: "rgba(74, 74, 74, 0.66)",
+        background: "rgba(74, 74, 74, 0.3)",
         boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
 
         // boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
@@ -132,7 +132,7 @@ const Menu = ({ reset }) => {
         left: "85vw",
         top: "80px",
 
-        background: "rgba(74, 74, 74, 0.66)",
+        background: "rgba(74, 74, 74, 0.3)",
         boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
 
         // boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
@@ -183,7 +183,7 @@ const Menu = ({ reset }) => {
         left: "85vw",
         top: "135px",
 
-        background: "rgba(74, 74, 74, 0.66)",
+        background: "rgba(74, 74, 74, 0.3)",
         boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
 
         // boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
@@ -233,7 +233,7 @@ const Menu = ({ reset }) => {
         left: "85vw",
         top: "190px",
 
-        background: "rgba(74, 74, 74, 0.66)",
+        background: "rgba(74, 74, 74, 0.3)",
         boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
 
         // boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",

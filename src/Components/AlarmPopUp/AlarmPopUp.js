@@ -8,6 +8,32 @@ const AlarmPopUp = ({ setOver, over }) => {
     setOver(!over);
   };
 
+  const vibrate = () =>
+    window.navigator.vibrate([
+      100,
+      30,
+      100,
+      30,
+      100,
+      30,
+      200,
+      30,
+      200,
+      30,
+      200,
+      30,
+      100,
+      30,
+      100,
+      30,
+      100,
+    ]);
+
+  vibrate();
+  const stopVibration = () => window.navigator.vibrate([0]);
+
+  vibrate();
+
   return (
     <>
       <div className={styles.wrapperOpen}>
@@ -28,7 +54,7 @@ const AlarmPopUp = ({ setOver, over }) => {
           <ButtonClose
             style={{ background: "#E3E3F6" }}
             setOver={setOver}
-            onclick={onclick}
+            onclick={(() => onclick(), stopVibration())}
           />
         </div>
       </div>

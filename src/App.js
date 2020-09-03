@@ -72,6 +72,7 @@ function App() {
                 min={min}
                 sec={sec}
                 date={date}
+                minTwoDigits={minTwoDigits}
               />
             )}
           />
@@ -90,6 +91,7 @@ function App() {
                 min={min}
                 sec={sec}
                 date={date}
+                minTwoDigits={minTwoDigits}
               />
             )}
           />
