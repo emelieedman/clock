@@ -3,15 +3,11 @@ import { Link } from "react-router-dom";
 import styles from "./Menu.module.css";
 
 const Menu = ({ reset }) => {
-  // const [open, setOpen] = useState(false);
   const [isClockOpen, setIsClockOpen] = useState(true);
   const [isAlarmOpen, setIsAlarmOpen] = useState(false);
   const [isTimerOpen, setIsTimerOpen] = useState(false);
   const [isStopwatchOpen, setIsStopwatchOpen] = useState(false);
 
-  // const toggleClass = () => {
-  //   setOpen(!open);
-  // };
   const toggleClock = () => {
     setIsClockOpen(!isClockOpen);
     setIsAlarmOpen(false);
@@ -36,58 +32,58 @@ const Menu = ({ reset }) => {
     setIsClockOpen(false);
     setIsTimerOpen(false);
   };
+  // const [open, setOpen] = useState(false);
 
-  const navItems2 = [
+  // const toggleClass = () => {
+  //   setOpen(!open);
+  // };
+
+  const navItems = [
     {
       id: "Clock",
       onclick: toggleClock,
       classname: "clock",
       styleOpen: {
-        outline: "none",
         zIndex: 10,
-        background: "#E3F6F6",
-        // color: "#718E8E",
-        color: "black",
+        position: "fixed",
+        top: "25px",
+        left: "80vw",
+        width: "20vw",
+        height: "50px",
         padding: "18px",
-        margin: "0",
+
+        background: "#C1E9F2",
+        boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
+        borderRadius: "30px 0px 0px 30px",
+
+        color: "black",
         textDecoration: "none",
         textAlign: "center",
         fontSize: "14px",
-        display: "block",
-        transition: "0.3s",
-        position: "fixed",
-        width: "20vw",
-        height: "50px",
-        left: "80vw",
-        top: "25px",
-
-        boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
-        borderRadius: "30px 0px 0px 30px",
-      },
-      styleClosed: {
         outline: "none",
-        zIndex: 10,
-        padding: "18px",
-        // background: "#E3F6F6",
-        // color: "#718E8E",
-        color: "black",
 
-        margin: "0",
-        textDecoration: "none",
-        fontSize: "14px",
-        display: "block",
         transition: "0.3s",
+      },
+
+      styleClosed: {
+        zIndex: 10,
         position: "fixed",
+        top: "25px",
+        left: "85vw",
         width: "15vw",
         height: "50px",
-        left: "85vw",
-        top: "25px",
+        padding: "18px",
 
         background: "rgba(74, 74, 74, 0.3)",
         boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
-
-        // boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
         borderRadius: "30px 0px 0px 30px",
+
+        color: "black",
+        textDecoration: "none",
+        fontSize: "14px",
+        outline: "none",
+
+        transition: "0.3s",
       },
     },
 
@@ -96,53 +92,44 @@ const Menu = ({ reset }) => {
       onclick: toggleAlarm,
       classname: "alarm",
       styleOpen: {
-        outline: "none",
-
         zIndex: 10,
-        background: "#FFEDED",
-        // color: "#A18585",
-        color: "black",
-
-        margin: "0",
-        padding: "18px",
-        textDecoration: "none",
-        fontSize: "14px",
-        display: "block",
-        transition: "0.3s",
         position: "fixed",
+        top: "80px",
+        left: "80vw",
         width: "20vw",
         height: "50px",
-        left: "80vw",
-        top: "80px",
+        padding: "18px",
 
+        background: "#F6D4D4",
         boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
         borderRadius: "30px 0px 0px 30px",
-      },
-      styleClosed: {
-        outline: "none",
 
-        zIndex: 10,
-        // background: "#FFEDED",
-        // color: "#A18585",
         color: "black",
-
-        margin: "0",
-        padding: "18px",
+        outline: "none",
         textDecoration: "none",
         fontSize: "14px",
-        display: "block",
+
         transition: "0.3s",
+      },
+      styleClosed: {
+        zIndex: 10,
         position: "fixed",
+        top: "80px",
+        left: "85vw",
         width: "15vw",
         height: "50px",
-        left: "85vw",
-        top: "80px",
+        padding: "18px",
 
         background: "rgba(74, 74, 74, 0.3)",
         boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
-
-        // boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
         borderRadius: "30px 0px 0px 30px",
+
+        color: "black",
+        outline: "none",
+        textDecoration: "none",
+        fontSize: "14px",
+
+        transition: "0.3s",
       },
     },
 
@@ -151,53 +138,44 @@ const Menu = ({ reset }) => {
       onclick: toggleTimer,
       classname: "timer",
       styleOpen: {
-        outline: "none",
-
         zIndex: 10,
-        background: "#E3E3F6",
-        // color: "#6D6D8C",
-        color: "black",
-
-        margin: "0",
-        padding: "18px",
-        textDecoration: "none",
-        fontSize: "14px",
-        display: "block",
-        transition: "0.3s",
         position: "fixed",
+        top: "135px",
+        left: "80vw",
         width: "20vw",
         height: "50px",
-        left: "80vw",
-        top: "135px",
+        padding: "18px",
 
+        background: "#DFD4F6",
         boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
         borderRadius: "30px 0px 0px 30px",
-      },
-      styleClosed: {
-        outline: "none",
 
-        zIndex: 10,
-        // background: "#E3E3F6",
-        // color: "#6D6D8C",
         color: "black",
-
-        margin: "0",
-        padding: "18px",
         textDecoration: "none",
         fontSize: "14px",
-        display: "block",
+        outline: "none",
+
         transition: "0.3s",
+      },
+      styleClosed: {
+        zIndex: 10,
         position: "fixed",
+        top: "135px",
+        left: "85vw",
         width: "15vw",
         height: "50px",
-        left: "85vw",
-        top: "135px",
+        padding: "18px",
 
         background: "rgba(74, 74, 74, 0.3)",
         boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
-
-        // boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
         borderRadius: "30px 0px 0px 30px",
+
+        color: "black",
+        textDecoration: "none",
+        fontSize: "14px",
+        outline: "none",
+
+        transition: "0.3s",
       },
     },
     {
@@ -205,108 +183,96 @@ const Menu = ({ reset }) => {
       onclick: toggleStopwatch,
       classname: "stopwatch",
       styleOpen: {
-        outline: "none",
-
         zIndex: 10,
-        background: "#E9F6E3",
-        // color: "#75886C",
-        color: "black",
-
-        margin: "0",
-        padding: "18px",
-        textDecoration: "none",
-        fontSize: "14px",
-        display: "block",
-        transition: "0.3s",
         position: "fixed",
+        top: "190px",
+        left: "75vw",
         width: "25vw",
         height: "50px",
-        left: "75vw",
-        top: "190px",
+        padding: "18px",
 
+        background: "#D0F9BE",
         boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
         borderRadius: "30px 0px 0px 30px",
-      },
-      styleClosed: {
-        outline: "none",
 
-        zIndex: 10,
-        // background: "#E9F6E3",
-        // color: "#75886C",
         color: "black",
-
-        margin: "0",
-        padding: "18px",
         textDecoration: "none",
         fontSize: "14px",
-        display: "block",
+        outline: "none",
+
         transition: "0.3s",
+      },
+      styleClosed: {
+        zIndex: 10,
         position: "fixed",
+        top: "190px",
+        left: "85vw",
         width: "15vw",
         height: "50px",
-        left: "85vw",
-        top: "190px",
-
+        padding: "18px",
         background: "rgba(74, 74, 74, 0.3)",
         boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
-
-        // boxShadow: "10px 10px 8px rgba(26, 26, 26, 0.42)",
         borderRadius: "30px 0px 0px 30px",
+        color: "black",
+        textDecoration: "none",
+        fontSize: "14px",
+        outline: "none",
+        transition: "0.3s",
       },
     },
   ];
 
   return (
     <>
-      {/* <div className={open ? styles.menuOpen : styles.menuClosed}> */}
-      <Link
-        to={navItems2[0].id}
-        key={navItems2[0].id}
-        className={styles.link}
-        style={isClockOpen ? navItems2[0].styleOpen : navItems2[0].styleClosed}
-        onClick={() => {
-          toggleClock();
-        }}
-      >
-        {isClockOpen ? navItems2[0].id : null}
-      </Link>
+      <div className={styles.link}>
+        <Link
+          to={navItems[0].id}
+          key={navItems[0].id}
+          style={isClockOpen ? navItems[0].styleOpen : navItems[0].styleClosed}
+          onClick={() => {
+            toggleClock();
+          }}
+        >
+          {isClockOpen ? navItems[0].id : null}
+        </Link>
+      </div>
 
       <Link
-        to={navItems2[1].id}
-        key={navItems2[1].id}
-        style={isAlarmOpen ? navItems2[1].styleOpen : navItems2[1].styleClosed}
+        to={navItems[1].id}
+        key={navItems[1].id}
+        style={isAlarmOpen ? navItems[1].styleOpen : navItems[1].styleClosed}
         onClick={() => {
           toggleAlarm();
           reset();
         }}
       >
-        {isAlarmOpen ? navItems2[1].id : null}
+        {isAlarmOpen ? navItems[1].id : null}
       </Link>
       <Link
-        to={navItems2[2].id}
-        key={navItems2[2].id}
-        style={isTimerOpen ? navItems2[2].styleOpen : navItems2[2].styleClosed}
+        to={navItems[2].id}
+        key={navItems[2].id}
+        style={isTimerOpen ? navItems[2].styleOpen : navItems[2].styleClosed}
         onClick={() => {
           toggleTimer();
           reset();
         }}
       >
-        {isTimerOpen ? navItems2[2].id : null}
+        {isTimerOpen ? navItems[2].id : null}
       </Link>
+
       <Link
-        to={navItems2[3].id}
-        key={navItems2[3].id}
+        to={navItems[3].id}
+        key={navItems[3].id}
         style={
-          isStopwatchOpen ? navItems2[3].styleOpen : navItems2[3].styleClosed
+          isStopwatchOpen ? navItems[3].styleOpen : navItems[3].styleClosed
         }
         onClick={() => {
           toggleStopwatch();
           reset();
         }}
       >
-        {isStopwatchOpen ? navItems2[3].id : null}
+        {isStopwatchOpen ? navItems[3].id : null}
       </Link>
-      {/* </div> */}
     </>
   );
 };

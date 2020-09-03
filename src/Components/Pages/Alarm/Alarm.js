@@ -14,6 +14,7 @@ const Alarm = ({ setHours, setMinutes, setSeconds, h, min, sec }) => {
           className={styles.alarm}
           type="time"
           onChange={(event) => setNewAlarm(event.target.value)}
+          autoFocus
         ></input>
         <br></br>
         <div

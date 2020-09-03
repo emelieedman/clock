@@ -13,10 +13,13 @@ window.navButtonData = navButtonData;
 
 function App() {
   const [isRunning, setIsRunning] = useState(false);
-  const [seconds, setSeconds] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [hours, setHours] = useState(0);
+  const [seconds, setSeconds] = useState();
+  const [minutes, setMinutes] = useState();
+  const [hours, setHours] = useState();
   const [over, setOver] = useState(false);
+  const [hourInput, setHourInput] = useState();
+  const [minuteInput, setMinuteInput] = useState();
+  const [secondInput, setSecondInput] = useState();
 
   const date = new Date();
   const h = date.getHours();
@@ -46,9 +49,9 @@ function App() {
   };
 
   const reset = () => {
-    setHours(0);
-    setMinutes(0);
-    setSeconds(0);
+    setHours();
+    setMinutes();
+    setSeconds();
     setIsRunning(false);
     setOver(false);
   };
