@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./ButtonSelect.module.css";
 
 const ButtonSelect = ({ style }) => {
-  const [isSelected, setIsSelected] = useState(false);
+  const [isSelected, setIsSelected] = useState(true);
 
   const toggleSelectButton = () => {
     setIsSelected(!isSelected);

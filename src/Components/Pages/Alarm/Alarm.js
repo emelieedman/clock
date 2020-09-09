@@ -1,11 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Alarm.module.css";
 import SetAlarms from "./SetAlarms";
 
-const Alarm = ({ setHours, setMinutes, setSeconds, h, min, sec }) => {
+const addSecondsToDate = (date, seconds) => {
+  return new Date(date.setTime(date.getTime() + seconds * 1000));
+};
+
+const Alarm = ({ over, setOver }) => {
   const [newAlarm, setNewAlarm] = useState(null);
   const [saveAlarm, setSaveAlarm] = useState(null);
-  // const [timeLeft, setTimeLeft] = useState();
+  const [alarmTime] = useState(addSecondsToDate(new Date(), saveAlarm));
+  const [timeLeft, setTimeLeft] = useState();
+
+  useEffect(() => {
+    const currentTime = new Date();
+    let interval;
+    interval = setInterval(() => {
+      if (alarmTime < currentTime) {
+        clearInterval(interval);
+        setTimeLeft(0);
+        alert("riiiing");
+      } else {
+        setTimeLeft(alarmTime - currentTime.getTime());
+      }
+    }, 10);
+
+    return () => clearInterval(interval);
+  }, [alarmTime]);
 
   return (
     <>
@@ -19,7 +40,9 @@ const Alarm = ({ setHours, setMinutes, setSeconds, h, min, sec }) => {
         <br></br>
         <div
           className={styles.saveButton}
-          onClick={() => setSaveAlarm(newAlarm)}
+          onClick={() => {
+            setSaveAlarm(newAlarm);
+          }}
         >
           &#43;
         </div>

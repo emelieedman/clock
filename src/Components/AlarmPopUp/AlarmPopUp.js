@@ -4,7 +4,7 @@ import styles from "./AlarmPopUp.module.css";
 import ButtonClose from "../ButtonClose/ButtonClose";
 
 const AlarmPopUp = ({ setOver, over }) => {
-  const onclick = () => {
+  const onClick = () => {
     setOver(!over);
   };
 
@@ -29,7 +29,6 @@ const AlarmPopUp = ({ setOver, over }) => {
       100,
     ]);
 
-  vibrate();
   const stopVibration = () => window.navigator.vibrate([0]);
 
   vibrate();
@@ -54,7 +53,7 @@ const AlarmPopUp = ({ setOver, over }) => {
           <ButtonClose
             style={{ background: "#E3E3F6" }}
             setOver={setOver}
-            onclick={(() => onclick(), stopVibration())}
+            onClick={() => onClick()}
           />
         </div>
       </div>

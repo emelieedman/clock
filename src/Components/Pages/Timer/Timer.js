@@ -112,7 +112,7 @@ const Timer = ({
         <Button
           text={"Start"}
           onClick={
-            !isRunning
+            !isRunning && !over
               ? () => {
                   toggle();
                   handleStart();

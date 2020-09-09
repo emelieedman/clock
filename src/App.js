@@ -8,6 +8,7 @@ import { navButtonData } from "./navButtonData";
 import Clock from "./Components/Pages/Clock/Clock";
 import Menu from "./Components/Menu/Menu";
 import Alarm from "./Components/Pages/Alarm/Alarm";
+// import AlarmTest from "./Components/Pages/Alarm/AlarmTest";
 
 window.navButtonData = navButtonData;
 
@@ -112,6 +113,8 @@ function App() {
                 h={h}
                 min={min}
                 sec={sec}
+                over={over}
+                setOver={setOver}
               />
             )}
           />
