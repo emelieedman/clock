@@ -6,6 +6,7 @@ const SetAlarms = ({
   saveAlarm,
   setSaveAlarm,
   isSelected,
+  setIsSelected,
   toggleSelectButton,
 }) => {
   return (
@@ -15,7 +16,6 @@ const SetAlarms = ({
         <div className={styles.buttonSelect}>
           <ButtonSelect
             style={{ background: "#F6D4D4" }}
-            isSelected={isSelected}
             toggleSelectButton={toggleSelectButton}
           />
         </div>

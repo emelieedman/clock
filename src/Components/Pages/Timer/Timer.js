@@ -126,7 +126,11 @@ const Timer = ({
 
       {over ? (
         <div className={styles.popUp}>
-          <AlarmPopUp setOver={setOver} over={over} />
+          <AlarmPopUp
+            setOver={setOver}
+            over={over}
+            style={{ background: "#E3E3F6" }}
+          />
         </div>
       ) : null}
     </>
