@@ -8,30 +8,30 @@ const AlarmPopUp = ({ style, setOver, over }) => {
     setOver(!over);
   };
 
-  const vibrate = () =>
-    window.navigator.vibrate([
-      100,
-      30,
-      100,
-      30,
-      100,
-      30,
-      200,
-      30,
-      200,
-      30,
-      200,
-      30,
-      100,
-      30,
-      100,
-      30,
-      100,
-    ]);
+  // const vibrate = () =>
+  //   window.navigator.vibrate([
+  //     100,
+  //     30,
+  //     100,
+  //     30,
+  //     100,
+  //     30,
+  //     200,
+  //     30,
+  //     200,
+  //     30,
+  //     200,
+  //     30,
+  //     100,
+  //     30,
+  //     100,
+  //     30,
+  //     100,
+  //   ]);
 
-  const stopVibration = () => window.navigator.vibrate([0]);
+  // const stopVibration = () => window.navigator.vibrate([0]);
 
-  vibrate();
+  // vibrate();
 
   return (
     <>

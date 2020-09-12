@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import styles from "./Stopwatch.module.css";
 import Button from "../../Button/Button";
 import Digits from "../../Digits/Digits";
-import AnalogClock from "../../AnalogClock/AnalogClock";
 
 const Stopwatch = ({
   reset,
@@ -15,9 +14,6 @@ const Stopwatch = ({
   hours,
   setHours,
   minTwoDigits,
-  second,
-  minute,
-  hour,
 }) => {
   useEffect(() => {
     let interval = null;
@@ -34,8 +30,6 @@ const Stopwatch = ({
 
   return (
     <>
-      <AnalogClock second={second} minute={minute} hour={hour} />
-
       <div>
         <Digits
           nr={

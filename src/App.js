@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styles from "./App.module.css";
-import Stopwatch from "./Components/Pages/Stopwatch/Stopwatch";
+import StopwatchTest from "./Components/Pages/Stopwatch/StopwatchTest";
 import Timer from "./Components/Pages/Timer/Timer";
 import Clock from "./Components/Pages/Clock/Clock";
 import Menu from "./Components/Menu/Menu";
@@ -56,13 +56,7 @@ function App() {
           <Route
             exact
             path="/stopwatch"
-            component={() => (
-              <Stopwatch
-                isRunning={isRunning}
-                toggle={toggle}
-                minTwoDigits={minTwoDigits}
-              />
-            )}
+            component={() => <StopwatchTest minTwoDigits={minTwoDigits} />}
           />
         </Switch>
 

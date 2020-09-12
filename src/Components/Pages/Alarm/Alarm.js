@@ -5,27 +5,9 @@ import AlarmPopUp from "../../AlarmPopUp/AlarmPopUp";
 import AnalogClock from "../../AnalogClock/AnalogClock";
 
 // to do: add saved alarms to an array when clicking the save button and then map the component SetAlarms to the array
+// fix the if statement so that if you set an alarm that has already passed it adds 24h
 
-const ss = 1000;
-const mm = ss * 60;
-const hh = mm * 60;
-
-const Alarm = ({
-  over,
-  setOver,
-  setHours,
-  setMinutes,
-  setSeconds,
-  seconds,
-  minutes,
-  hours,
-  h,
-  min,
-  sec,
-  second,
-  hour,
-  minute,
-}) => {
+const Alarm = ({ over, setOver }) => {
   const [newAlarm, setNewAlarm] = useState();
   const [saveAlarm, setSaveAlarm] = useState();
 
@@ -48,11 +30,7 @@ const Alarm = ({
     const alarmToMilliSec = alarm.getTime();
     setAlarmTime(alarmToMilliSec);
     setSaveAlarm(newAlarm);
-    console.log("alarmTime", alarmTime);
   };
-
-  console.log("alarmTime", alarmTime);
-  console.log("over", over);
 
   useEffect(() => {
     let interval;
@@ -69,34 +47,11 @@ const Alarm = ({
     }, 10);
 
     return () => clearInterval(interval);
-  }, [alarmTime, isSelected]);
-
-  // useEffect(() => {
-  //   let interval = null;
-  //   interval = setInterval(() => {
-  //     setHours(h);
-  //     setMinutes(min);
-  //     setSeconds(sec);
-  //   }, 1000);
-  //   return () => clearInterval(interval);
-  // }, [seconds]);
+  }, [alarmTime, isSelected, over, setOver]);
 
   return (
     <>
-      <AnalogClock
-        setHours={setHours}
-        setMinutes={setMinutes}
-        setSeconds={setSeconds}
-        seconds={seconds}
-        minutes={minutes}
-        hours={hours}
-        h={h}
-        min={min}
-        sec={sec}
-        second={second}
-        minute={minute}
-        hour={hour}
-      />
+      <AnalogClock />
 
       <div className={styles.alarm}>
         <input

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Menu.module.css";
 
-const Menu = ({}) => {
+const Menu = () => {
   const [isClockOpen, setIsClockOpen] = useState(true);
   const [isAlarmOpen, setIsAlarmOpen] = useState(false);
   const [isTimerOpen, setIsTimerOpen] = useState(false);
