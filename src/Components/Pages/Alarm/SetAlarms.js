@@ -15,8 +15,10 @@ const SetAlarms = ({
         <p className={styles.time}>{saveAlarm}</p>
         <div className={styles.buttonSelect}>
           <ButtonSelect
-            style={{ background: "#F6D4D4" }}
+            isSelected={isSelected}
+            setIsSelected={setIsSelected}
             toggleSelectButton={toggleSelectButton}
+            style={{ background: "#F6D4D4" }}
           />
         </div>
         <div

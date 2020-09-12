@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Menu.module.css";
 
-const Menu = ({ reset }) => {
+const Menu = ({}) => {
   const [isClockOpen, setIsClockOpen] = useState(true);
   const [isAlarmOpen, setIsAlarmOpen] = useState(false);
   const [isTimerOpen, setIsTimerOpen] = useState(false);
@@ -40,7 +40,7 @@ const Menu = ({ reset }) => {
 
   const navItems = [
     {
-      id: "Clock",
+      id: "clock",
       onclick: toggleClock,
       classname: "clock",
       styleOpen: {
@@ -88,7 +88,7 @@ const Menu = ({ reset }) => {
     },
 
     {
-      id: "Alarm",
+      id: "alarm",
       onclick: toggleAlarm,
       classname: "alarm",
       styleOpen: {
@@ -134,7 +134,7 @@ const Menu = ({ reset }) => {
     },
 
     {
-      id: "Timer",
+      id: "timer",
       onclick: toggleTimer,
       classname: "timer",
       styleOpen: {
@@ -179,7 +179,7 @@ const Menu = ({ reset }) => {
       },
     },
     {
-      id: "Stopwatch",
+      id: "stopwatch",
       onclick: toggleStopwatch,
       classname: "stopwatch",
       styleOpen: {
@@ -243,7 +243,7 @@ const Menu = ({ reset }) => {
         style={isAlarmOpen ? navItems[1].styleOpen : navItems[1].styleClosed}
         onClick={() => {
           toggleAlarm();
-          reset();
+          // reset();
         }}
       >
         {isAlarmOpen ? navItems[1].id : null}
@@ -254,7 +254,7 @@ const Menu = ({ reset }) => {
         style={isTimerOpen ? navItems[2].styleOpen : navItems[2].styleClosed}
         onClick={() => {
           toggleTimer();
-          reset();
+          // reset();
         }}
       >
         {isTimerOpen ? navItems[2].id : null}
@@ -268,7 +268,7 @@ const Menu = ({ reset }) => {
         }
         onClick={() => {
           toggleStopwatch();
-          reset();
+          // reset();
         }}
       >
         {isStopwatchOpen ? navItems[3].id : null}

@@ -3,7 +3,10 @@ import styles from "./Timer.module.css";
 import Button from "../../Button/Button";
 import InputField from "../../InputField/InputField";
 import AlarmPopUp from "../../AlarmPopUp/AlarmPopUp";
+import AnalogClock from "../../AnalogClock/AnalogClock";
 // import alarm from "../../../Assets/Music_Box-Big_Daddy-1389738694.mp3";
+
+// to do: refactor the code and use new Date() instead of the current if statement
 
 const Timer = ({
   reset,
@@ -20,6 +23,9 @@ const Timer = ({
   over,
   setOver,
   toggleSelectButton,
+  second,
+  minute,
+  hour,
 }) => {
   const [hourInput, setHourInput] = useState();
   const [minuteInput, setMinuteInput] = useState();
@@ -89,6 +95,7 @@ const Timer = ({
 
   return (
     <>
+      <AnalogClock second={second} minute={minute} hour={hour} />
       <div className={styles.inputFields}>
         <InputField
           name={hours}
