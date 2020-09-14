@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Timer.module.css";
 import Button from "../../Button/Button";
 import InputField from "../../InputField/InputField";
 import AlarmPopUp from "../../AlarmPopUp/AlarmPopUp";
+import AnalogClock from "../../AnalogClock/AnalogClock";
 // import alarm from "../../../Assets/Music_Box-Big_Daddy-1389738694.mp3";
+
+// to do: refactor the code and use new Date() instead of the current if statement
 
 const Timer = ({
   reset,
@@ -20,8 +23,35 @@ const Timer = ({
   over,
   setOver,
   toggleSelectButton,
+  second,
+  minute,
+  hour,
 }) => {
+  const [hourInput, setHourInput] = useState();
+  const [minuteInput, setMinuteInput] = useState();
+  const [secondInput, setSecondInput] = useState();
+
   console.log("over", over);
+  console.log("seconds", seconds);
+  console.log("minutes", minutes);
+  console.log("hours", hours);
+  console.log("secondInput", secondInput);
+  console.log("minuteInput", minuteInput);
+  console.log("hourInput", hourInput);
+
+  const handleStart = () => {
+    setSeconds(secondInput);
+    setMinutes(minuteInput);
+    setHours(hourInput);
+  };
+
+  const handlePause = () => {
+    setSecondInput(seconds);
+    setMinuteInput(minutes);
+    setHourInput(hours);
+    setIsRunning(false);
+  };
+
   useEffect(() => {
     let interval = null;
 
@@ -65,32 +95,49 @@ const Timer = ({
 
   return (
     <>
+      <AnalogClock second={second} minute={minute} hour={hour} />
       <div className={styles.inputFields}>
         <InputField
-          onChange={(event) => setHours(event.target.value)}
-          value={minTwoDigits(hours)}
+          name={hours}
+          onchange={(event) => setHourInput(event.target.value)}
+          value={hours}
         />
         <InputField
-          onChange={(event) => setMinutes(event.target.value)}
-          value={minTwoDigits(minutes)}
+          name={minutes}
+          onchange={(event) => setMinuteInput(event.target.value)}
+          value={minutes}
         />
         <InputField
-          onChange={(event) => setSeconds(event.target.value)}
-          value={minTwoDigits(seconds)}
+          name={seconds}
+          onchange={(event) => {
+            setSecondInput(event.target.value);
+          }}
+          value={seconds}
         />
       </div>
       <div className={styles.startResetButtons}>
-        <Button text="Reset" onClick={() => reset()} />
         <Button
-          text={isRunning ? "Pause" : "Start"}
-          onClick={() => {
-            toggle();
-          }}
+          text={"Start"}
+          onClick={
+            !isRunning && !over
+              ? () => {
+                  toggle();
+                  handleStart();
+                }
+              : null
+          }
         />
+        <Button text={"pause"} onClick={() => handlePause()} />
+        <Button text="Reset" onClick={() => reset()} />
       </div>
+
       {over ? (
         <div className={styles.popUp}>
-          <AlarmPopUp setOver={setOver} over={over} />
+          <AlarmPopUp
+            setOver={setOver}
+            over={over}
+            style={{ background: "#E3E3F6" }}
+          />
         </div>
       ) : null}
     </>

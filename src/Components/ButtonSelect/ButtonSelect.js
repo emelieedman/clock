@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./ButtonSelect.module.css";
 
-const ButtonSelect = ({ style }) => {
-  const [isSelected, setIsSelected] = useState(false);
+const ButtonSelect = ({
+  style,
+  isSelected,
 
-  const toggleSelectButton = () => {
-    setIsSelected(!isSelected);
-  };
-
+  toggleSelectButton,
+}) => {
   console.log("isSelected?", isSelected);
   return (
     <>

@@ -3,36 +3,35 @@ import styles from "./AlarmPopUp.module.css";
 // import ButtonSelect from "../ButtonSelect/ButtonSelect";
 import ButtonClose from "../ButtonClose/ButtonClose";
 
-const AlarmPopUp = ({ setOver, over }) => {
-  const onclick = () => {
+const AlarmPopUp = ({ style, setOver, over }) => {
+  const onClick = () => {
     setOver(!over);
   };
 
-  const vibrate = () =>
-    window.navigator.vibrate([
-      100,
-      30,
-      100,
-      30,
-      100,
-      30,
-      200,
-      30,
-      200,
-      30,
-      200,
-      30,
-      100,
-      30,
-      100,
-      30,
-      100,
-    ]);
+  // const vibrate = () =>
+  //   window.navigator.vibrate([
+  //     100,
+  //     30,
+  //     100,
+  //     30,
+  //     100,
+  //     30,
+  //     200,
+  //     30,
+  //     200,
+  //     30,
+  //     200,
+  //     30,
+  //     100,
+  //     30,
+  //     100,
+  //     30,
+  //     100,
+  //   ]);
 
-  vibrate();
-  const stopVibration = () => window.navigator.vibrate([0]);
+  // const stopVibration = () => window.navigator.vibrate([0]);
 
-  vibrate();
+  // vibrate();
 
   return (
     <>
@@ -52,9 +51,9 @@ const AlarmPopUp = ({ setOver, over }) => {
         </div> */}
         <div className={styles.buttonClose}>
           <ButtonClose
-            style={{ background: "#E3E3F6" }}
+            style={style}
             setOver={setOver}
-            onclick={(() => onclick(), stopVibration())}
+            onClick={() => onClick()}
           />
         </div>
       </div>

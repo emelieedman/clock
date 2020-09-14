@@ -1,0 +1,90 @@
+.backgroundOverlay {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  width: 100vw;
+}
+.clockNav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+
+  width: 2vh;
+  height: 2vh;
+  border-radius: 50%;
+
+  background: #b2b2b2;
+  border: 3px solid #ffffff;
+  /* box-shadow: 0px 1px 5px black; */
+}
+
+.secondHand {
+  position: absolute;
+  margin: auto;
+  z-index: 3;
+
+  top: -12%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform-origin: bottom;
+  transform: rotate(180deg);
+
+  height: 12%;
+  width: 2px;
+
+  border: 1px solid #b2b2b2;
+  border-radius: 4px;
+
+  /* box-shadow: 0px 1px 5px black; */
+}
+
+.minuteHand {
+  position: absolute;
+  z-index: 2;
+  margin: auto;
+  transform-origin: bottom;
+  transform: rotate(90deg);
+
+  top: -12%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  height: 12%;
+  width: 6px;
+
+  background-color: white;
+
+  border: 3px solid #ffffff;
+  border-radius: 8px;
+
+  /* box-shadow: 0px 1px 5px black; */
+}
+
+.hourHand {
+  position: absolute;
+  z-index: 1;
+  margin: auto;
+  transform-origin: bottom;
+  transform: rotate(90deg);
+
+  top: -10%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  height: 10%;
+  width: 6px;
+
+  background-color: white;
+
+  border: 3px solid #ffffff;
+  border-radius: 8px;
+
+  /* box-shadow: 0px 1px 5px black; */
+}

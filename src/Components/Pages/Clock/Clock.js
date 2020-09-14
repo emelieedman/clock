@@ -1,31 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Clock.module.css";
+import AnalogClock from "../../AnalogClock/AnalogClock";
 
-const Clock = ({
-  setHours,
-  setMinutes,
-  setSeconds,
-  h,
-  min,
-  sec,
-  date,
-  minTwoDigits,
-}) => {
+const Clock = ({ minTwoDigits }) => {
+  const [minutes, setMinutes] = useState(new Date().getMinutes());
+  const [hours, setHours] = useState(new Date().getHours());
+  const [date, setDate] = useState(new Date().toDateString());
+
   useEffect(() => {
     let interval = null;
     interval = setInterval(() => {
-      setHours(h);
-      setMinutes(min);
-      setSeconds(sec);
-    }, 1000);
+      setHours(new Date().getHours());
+      setMinutes(new Date().getMinutes());
+      setDate(new Date().toDateString());
+    }, 10);
     return () => clearInterval(interval);
   });
 
   return (
     <>
-      <h1 className={styles.headline}>Stockholm</h1>
-      <p className={styles.time}>{minTwoDigits(h) + ":" + minTwoDigits(min)}</p>
-      <p className={styles.date}>{date.toDateString()}</p>
+      <AnalogClock />
+      <p className={styles.time}>
+        {minTwoDigits(hours) + ":" + minTwoDigits(minutes)}
+      </p>
+      <p className={styles.date}>{date}</p>
     </>
   );
 };
