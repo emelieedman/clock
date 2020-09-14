@@ -9,10 +9,10 @@ const AlarmPopUp = ({ style, setOver, over }) => {
 
   const onClick = () => {
     setOver(!over);
-    alarm.pause();
+    alarm.play();
   };
 
-  window.onload = alarm.play();
+  // window.onload = alarm.play();
 
   // const vibrate = () =>
   //   window.navigator.vibrate([
