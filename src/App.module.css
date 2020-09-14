@@ -3,7 +3,7 @@
   font-family: "roboto", sans-serif;
 }
 
-body.no-scroll {
+body {
   left: 0;
   -webkit-overflow-scrolling: touch;
   position: fixed;
