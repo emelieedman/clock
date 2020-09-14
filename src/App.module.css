@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  overflow: hidden;
+
   font-family: "roboto", sans-serif;
 }
 
@@ -10,4 +10,5 @@
   display: grid;
   grid-template-rows: 20vh 60vh 20vh;
   height: 100vh;
+  overflow: hidden;
 }
