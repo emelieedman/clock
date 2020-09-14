@@ -3,8 +3,12 @@
   font-family: "roboto", sans-serif;
 }
 
-body.noScroll {
-  overflow: hidden;
+body.no-scroll {
+  left: 0;
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .App {
