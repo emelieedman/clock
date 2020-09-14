@@ -2,11 +2,17 @@ import React from "react";
 import styles from "./AlarmPopUp.module.css";
 // import ButtonSelect from "../ButtonSelect/ButtonSelect";
 import ButtonClose from "../ButtonClose/ButtonClose";
+import music from "../../Assets/Peaceful-piano-and-synth-pads.mp3";
 
 const AlarmPopUp = ({ style, setOver, over }) => {
+  const alarm = new Audio(music);
+
   const onClick = () => {
     setOver(!over);
+    alarm.pause();
   };
+
+  window.onload = alarm.play();
 
   // const vibrate = () =>
   //   window.navigator.vibrate([

@@ -3,6 +3,7 @@ import styles from "./Alarm.module.css";
 import SetAlarms from "./SetAlarms";
 import AlarmPopUp from "../../AlarmPopUp/AlarmPopUp";
 import AnalogClock from "../../AnalogClock/AnalogClock";
+import music from "../../../Assets/Peaceful-piano-and-synth-pads.mp3";
 
 // to do: add saved alarms to an array when clicking the save button and then map the component SetAlarms to the array
 // fix the if statement so that if you set an alarm that has already passed it adds 24h
@@ -13,6 +14,8 @@ const Alarm = ({ over, setOver }) => {
 
   const [alarmTime, setAlarmTime] = useState();
   const [isSelected, setIsSelected] = useState(true);
+
+  let audio = new Audio(music);
 
   const toggleSelectButton = () => {
     setIsSelected(!isSelected);
