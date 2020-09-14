@@ -76,7 +76,7 @@ const Alarm = ({ over, setOver }) => {
         </div>
       </div>
       {saveAlarm ? (
-        <div className={styles.newAlarm}>
+        <div className={styles.savedAlarm}>
           <SetAlarms
             saveAlarm={saveAlarm}
             setSaveAlarm={setSaveAlarm}
