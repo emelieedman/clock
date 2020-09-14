@@ -1,7 +1,7 @@
 .inputFields {
   display: flex;
-  grid-row-start: 2;
-  align-self: flex-start;
+  grid-row-start: 1;
+  align-self: center;
   justify-content: center;
   z-index: 10;
   padding-left: 15px;

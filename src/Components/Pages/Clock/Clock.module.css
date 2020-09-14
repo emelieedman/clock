@@ -1,6 +1,6 @@
 .time {
-  grid-row-start: 2;
-  align-self: flex-start;
+  grid-row-start: 1;
+  align-self: center;
   justify-self: center;
   margin: 0;
   padding: 0;
