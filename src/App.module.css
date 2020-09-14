@@ -3,6 +3,10 @@
   font-family: "roboto", sans-serif;
 }
 
+body.noScroll {
+  overflow: hidden;
+}
+
 .App {
   background: linear-gradient(180deg, #7b7b7d 0%, #151515 100%);
   color: #d0d0d0;
