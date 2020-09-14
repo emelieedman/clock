@@ -5,7 +5,6 @@ import AlarmPopUp from "../../AlarmPopUp/AlarmPopUp";
 import AnalogClock from "../../AnalogClock/AnalogClock";
 
 // to do: add saved alarms to an array when clicking the save button and then map the component SetAlarms to the array
-// fix the if statement so that if you set an alarm that has already passed it adds 24h
 
 const Alarm = ({ over, setOver }) => {
   const [newAlarm, setNewAlarm] = useState();

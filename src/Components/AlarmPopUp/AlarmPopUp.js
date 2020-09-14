@@ -12,12 +12,7 @@ const AlarmPopUp = ({ style, setOver, over }) => {
     alarm.pause();
   };
 
-  const vibrate = () => {
-    window.navigator.vibrate([100, 30]);
-  };
-
   window.onload = alarm.play();
-  window.onload = vibrate();
 
   // const vibrate = () =>
   //   window.navigator.vibrate([
