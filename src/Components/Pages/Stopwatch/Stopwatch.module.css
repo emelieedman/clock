@@ -34,9 +34,9 @@
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 35vh;
+  top: 35%;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   background: #d0f9be;
   box-shadow: 2px 9px 18px rgba(0, 0, 0, 0.25), inset -5px -8px 11px #30492e;

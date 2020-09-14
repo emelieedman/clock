@@ -1,6 +1,7 @@
 * {
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   font-family: "roboto", sans-serif;
 }
 
@@ -9,6 +10,8 @@
   color: #d0d0d0;
   display: grid;
   grid-template-rows: 15vh 15vh 40vh repeat(2, 15vh);
+  width: 100vw;
+  height: 100vh;
 }
 
 .wrapper {
