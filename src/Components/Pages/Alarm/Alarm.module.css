@@ -4,7 +4,7 @@
   padding: 0;
   display: flex;
   justify-self: center;
-  align-self: center;
+  align-self: flex-end;
   grid-row-start: 1;
 
   font-size: 36px;
@@ -17,8 +17,8 @@
 
 .savedAlarm {
   z-index: 10;
-  grid-row-start: 4;
-  align-self: flex-end;
+  grid-row-start: 3;
+  align-self: flex-start;
 }
 
 .saveButton {

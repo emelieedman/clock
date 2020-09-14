@@ -1,6 +1,6 @@
 .time {
   grid-row-start: 1;
-  align-self: center;
+  align-self: flex-end;
   justify-self: center;
   margin: 0;
   padding: 0;
@@ -12,8 +12,8 @@
   line-height: 56px;
 }
 .date {
-  grid-row-start: 4;
-  align-self: center;
+  grid-row-start: 3;
+  align-self: flex-start;
   justify-self: center;
   margin: 0;
   padding: 0;
