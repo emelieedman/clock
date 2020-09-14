@@ -20,7 +20,6 @@ const Clock = ({ minTwoDigits }) => {
   return (
     <>
       <AnalogClock />
-      <h1 className={styles.headline}>Stockholm</h1>
       <p className={styles.time}>
         {minTwoDigits(hours) + ":" + minTwoDigits(minutes)}
       </p>

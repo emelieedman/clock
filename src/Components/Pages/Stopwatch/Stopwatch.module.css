@@ -1,11 +1,10 @@
 .digits {
   display: flex;
-  grid-row-start: 2;
-  align-self: flex-end;
+  grid-row-start: 3;
+  align-self: center;
   z-index: 10;
   justify-content: center;
   align-content: center;
-  /* justify-content: space-evenly; */
   padding-left: 10vw;
   padding-right: 10vw;
 }
@@ -27,4 +26,44 @@
   background: rgba(0, 0, 0, 0.6);
   height: 100vh;
   width: 100vw;
+}
+
+.ball {
+  z-index: 100;
+  background: #d0f9be;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  background: #d0f9be;
+  box-shadow: 2px 9px 18px rgba(0, 0, 0, 0.25), inset -5px -8px 11px #30492e;
+}
+
+.line {
+  position: absolute;
+  margin: auto;
+  z-index: 3;
+
+  top: -12%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform-origin: bottom;
+  /* transform: rotate(180deg); */
+
+  height: 12%;
+  width: 2px;
+}
+
+.wrapper {
+  position: absolute;
+  margin: auto;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }

@@ -27,8 +27,13 @@ const Alarm = ({ over, setOver }) => {
     alarm.setMinutes(minutes);
     alarm.setSeconds(0);
 
-    const alarmToMilliSec = alarm.getTime();
-    setAlarmTime(alarmToMilliSec);
+    if (alarm < new Date()) {
+      alarm.setDate(new Date().getDate() + 1);
+    }
+
+    console.log("alarm", alarm);
+
+    setAlarmTime(alarm.getTime());
     setSaveAlarm(newAlarm);
   };
 
@@ -40,10 +45,8 @@ const Alarm = ({ over, setOver }) => {
       if (isSelected && alarmTime && alarmTime < now) {
         clearInterval(interval);
         setOver(!over);
+        console.log("alarmtime", new Date(alarmTime));
       }
-      // else if (isSelected && alarmTime && alarmTime < now) {
-      //   setAlarmTime(alarmTime + 24 * hh);
-      // }
     }, 10);
 
     return () => clearInterval(interval);
