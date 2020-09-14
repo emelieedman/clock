@@ -1,6 +1,6 @@
 .digits {
   display: flex;
-  grid-row-start: 3;
+  grid-row-start: 2;
   align-self: center;
   z-index: 10;
   justify-content: center;
