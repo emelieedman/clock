@@ -11,7 +11,7 @@
 
 .startResetButtons {
   z-index: 10;
-  grid-row-start: 5;
+  grid-row-start: 3;
   display: flex;
   justify-content: space-between;
   justify-content: space-around;
