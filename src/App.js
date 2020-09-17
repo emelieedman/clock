@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styles from "./App.module.css";
 import StopwatchTest from "./Components/Pages/Stopwatch/StopwatchTest";
-import Timer from "./Components/Pages/Timer/Timer";
+import TimerTest from "./Components/Pages/Timer/TimerTest";
 import Clock from "./Components/Pages/Clock/Clock";
 import Menu from "./Components/Menu/Menu";
 import Alarm from "./Components/Pages/Alarm/Alarm";
@@ -43,7 +43,7 @@ function App() {
             exact
             path="/timer"
             component={() => (
-              <Timer
+              <TimerTest
                 isRunning={isRunning}
                 setIsRunning={setIsRunning}
                 toggle={toggle}

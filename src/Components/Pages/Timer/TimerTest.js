@@ -1,57 +1,118 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import styles from "./Timer.module.css";
+import Button from "../../Button/Button";
+import InputField from "../../InputField/InputField";
+import AlarmPopUp from "../../AlarmPopUp/AlarmPopUp";
+import blackBackground from "../../../Assets/black-bump.svg";
 
-const TimerTest = () => {
-  const [hours, setHours] = useState();
-  const [minutes, setMinutes] = useState();
-  const [seconds, setSeconds] = useState();
+const TimerTest = ({ over, setOver, minTwoDigits }) => {
+  const [diff, setDiff] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+
+  const [hourInput, setHourInput] = useState(0);
+  const [minInput, setMinInput] = useState(0);
+  const [secInput, setSecInput] = useState(0);
+
+  const [alarm, setAlarm] = useState(0);
+
+  const resetInput = () => {
+    setHourInput(0);
+    setMinInput(0);
+    setSecInput(0);
+  };
+
+  const reset = useCallback(() => {
+    setIsRunning(false);
+    resetInput();
+  }, []);
+
+  const toggle = () => {
+    setIsRunning(!isRunning);
+
+    const add = new Date();
+    add.setHours(add.getHours() + parseInt(hourInput));
+    add.setMinutes(add.getMinutes() + parseInt(minInput));
+    add.setSeconds(add.getSeconds() + parseInt(secInput));
+    setAlarm(add.getTime());
+  };
+
+  useEffect(() => {
+    let interval;
+    interval = setInterval(() => {
+      if (isRunning) {
+        let diff = alarm - new Date().getTime();
+        setDiff(diff);
+
+        if (diff < 0) {
+          reset();
+          clearInterval(interval);
+          setOver(true);
+          console.log("RIIIING");
+        }
+      }
+    }, 10);
+    return () => clearInterval(interval);
+  }, [isRunning, alarm, reset, setOver]);
+
+  const hour = new Date(diff).getHours() - 1;
+  const min = new Date(diff).getMinutes();
+  const sec = new Date(diff).getSeconds();
 
   return (
     <>
-      <AnalogClock second={second} minute={minute} hour={hour} />
+      <div className={styles.backgroundOverlay}></div>
+      <div
+        className={styles.wrapper}
+        style={{
+          transform: `rotate(${sec * 6}deg)`,
+          transition: "1.1s linear",
+        }}
+      >
+        <span className={styles.line}></span>
+      </div>
+      <img
+        src={blackBackground}
+        alt=""
+        className={styles.backgroundImg}
+        style={{
+          zIndex: "0",
+          display: "block",
+          width: "100vw",
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      />
       <div className={styles.inputFields}>
         <InputField
-          name={hours}
           onchange={(event) => setHourInput(event.target.value)}
-          value={hours}
+          value={minTwoDigits(isRunning ? hour : hourInput)}
         />
         <InputField
-          name={minutes}
-          onchange={(event) => setMinuteInput(event.target.value)}
-          value={minutes}
+          onchange={(event) => setMinInput(event.target.value)}
+          value={minTwoDigits(isRunning ? min : minInput)}
         />
         <InputField
-          name={seconds}
-          onchange={(event) => {
-            setSecondInput(event.target.value);
-          }}
-          value={seconds}
+          onchange={(event) => setSecInput(event.target.value)}
+          value={minTwoDigits(isRunning ? sec : secInput)}
         />
       </div>
       <div className={styles.startResetButtons}>
-        <Button
-          text={"Start"}
-          onClick={
-            !isRunning && !over
-              ? () => {
-                  toggle();
-                  handleStart();
-                }
-              : null
-          }
-        />
-        <Button text={"pause"} onClick={() => handlePause()} />
         <Button text="Reset" onClick={() => reset()} />
+        <Button
+          text={isRunning ? "Pause" : "Start"}
+          onClick={() => {
+            toggle();
+          }}
+        />
       </div>
-
       {over ? (
-        <div className={styles.popUp}>
-          <AlarmPopUp
-            setOver={setOver}
-            over={over}
-            style={{ background: "#E3E3F6" }}
-          />
-        </div>
+        <AlarmPopUp
+          over={over}
+          setOver={setOver}
+          style={{ background: "#DFD4F6" }}
+        />
       ) : null}
     </>
   );

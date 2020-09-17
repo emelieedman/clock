@@ -30,7 +30,6 @@
 
 .ball {
   z-index: 100;
-  background: #d0f9be;
   width: 30px;
   height: 30px;
   position: absolute;

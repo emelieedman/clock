@@ -23,7 +23,7 @@ const StopwatchTest = ({ minTwoDigits }) => {
     setHour(0);
   };
 
-  const handleClick = () => {
+  const toggle = () => {
     setIsRunning(!isRunning);
   };
 
@@ -49,7 +49,7 @@ const StopwatchTest = ({ minTwoDigits }) => {
       }
     }, 10);
     return () => clearInterval(interval);
-  }, [isRunning, prevHours, prevMinutes, prevSeconds, hour, min, sec]);
+  }, [isRunning, prevHours, prevMinutes, prevSeconds]);
 
   return (
     <>
@@ -90,7 +90,7 @@ const StopwatchTest = ({ minTwoDigits }) => {
         <Button
           text={isRunning ? "Pause" : "Start"}
           onClick={() => {
-            handleClick();
+            toggle();
             setPrevTime();
           }}
         />
