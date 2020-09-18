@@ -35,6 +35,20 @@
   right: 0;
 }
 
+.clockNav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+
+  width: 1.5vh;
+  height: 1.5vh;
+  border-radius: 50%;
+
+  background: #dfd4f6;
+}
+
 .line {
   position: absolute;
   margin: auto;
@@ -50,4 +64,21 @@
 
   height: 12%;
   width: 2px;
+}
+
+.alarm {
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-self: center;
+  align-self: flex-end;
+  grid-row-start: 1;
+
+  font-size: 36px;
+
+  background: none;
+  border: none;
+  outline: none;
+  color: #d0d0d0;
 }

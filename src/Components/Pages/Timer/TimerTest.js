@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import styles from "./Timer.module.css";
 import Button from "../../Button/Button";
-import InputField from "../../InputField/InputField";
+// import InputField from "../../InputField/InputField";
 import AlarmPopUp from "../../AlarmPopUp/AlarmPopUp";
 import blackBackground from "../../../Assets/black-bump.svg";
 
@@ -9,16 +9,16 @@ const TimerTest = ({ over, setOver, minTwoDigits }) => {
   const [diff, setDiff] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
 
-  const [hourInput, setHourInput] = useState(0);
-  const [minInput, setMinInput] = useState(0);
-  const [secInput, setSecInput] = useState(0);
+  const [timeInput, setTimeInput] = useState(0);
+
+  // const [hourInput, setHourInput] = useState(0);
+  // const [minInput, setMinInput] = useState(0);
+  // const [secInput, setSecInput] = useState(0);
 
   const [alarm, setAlarm] = useState(0);
 
   const resetInput = () => {
-    setHourInput(0);
-    setMinInput(0);
-    setSecInput(0);
+    setTimeInput(0);
   };
 
   const reset = useCallback(() => {
@@ -29,10 +29,13 @@ const TimerTest = ({ over, setOver, minTwoDigits }) => {
   const toggle = () => {
     setIsRunning(true);
 
+    const hours = parseInt(timeInput.split(":")[0]);
+    const minutes = parseInt(timeInput.split(":")[1]);
+
     const add = new Date();
-    add.setHours(add.getHours() + parseInt(hourInput));
-    add.setMinutes(add.getMinutes() + parseInt(minInput));
-    add.setSeconds(add.getSeconds() + parseInt(secInput));
+    add.setHours(add.getHours() + hours);
+    add.setMinutes(add.getMinutes() + minutes);
+
     setAlarm(add.getTime());
   };
 
@@ -57,6 +60,7 @@ const TimerTest = ({ over, setOver, minTwoDigits }) => {
   const hour = new Date(diff).getHours() - 1;
   const min = new Date(diff).getMinutes();
   const sec = new Date(diff).getSeconds();
+  const time = new Date(diff).getTime();
 
   return (
     <>
@@ -64,10 +68,10 @@ const TimerTest = ({ over, setOver, minTwoDigits }) => {
       <div
         className={styles.wrapper}
         style={{
-          transform: `rotate(${isRunning ? sec * 6 : secInput}deg)`,
-          transition: "1.1s linear",
+          transform: `rotate(${sec * 6}deg)`,
         }}
       >
+        <div className={styles.clockNav} />
         <span className={styles.line}></span>
       </div>
       <img
@@ -85,7 +89,25 @@ const TimerTest = ({ over, setOver, minTwoDigits }) => {
         }}
       />
       <div className={styles.inputFields}>
-        <InputField
+        {!isRunning ? (
+          <input
+            className={styles.alarm}
+            type="time"
+            onChange={(event) => {
+              setTimeInput(event.target.value);
+            }}
+          ></input>
+        ) : (
+          <p className={styles.alarm}>
+            {minTwoDigits(hour) +
+              ":" +
+              minTwoDigits(min) +
+              ":" +
+              minTwoDigits(sec)}
+          </p>
+        )}
+
+        {/* <InputField
           onchange={(event) => setHourInput(event.target.value)}
           value={minTwoDigits(isRunning ? hour : hourInput)}
         />
@@ -96,11 +118,14 @@ const TimerTest = ({ over, setOver, minTwoDigits }) => {
         <InputField
           onchange={(event) => setSecInput(event.target.value)}
           value={minTwoDigits(isRunning ? sec : secInput)}
-        />
+        /> */}
       </div>
       <div className={styles.startResetButtons}>
         <Button text="Stop" onClick={() => reset()} />
-        <Button text="Start" onClick={() => (!isRunning ? toggle() : null)} />
+        <Button
+          text="Start"
+          onClick={() => (!isRunning && timeInput !== 0 ? toggle() : null)}
+        />
       </div>
       {over ? (
         <AlarmPopUp

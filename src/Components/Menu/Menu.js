@@ -3,31 +3,31 @@ import { Link } from "react-router-dom";
 import styles from "./Menu.module.css";
 
 const Menu = () => {
-  const [isClockOpen, setIsClockOpen] = useState(true);
+  const [isClockOpen, setIsClockOpen] = useState(false);
   const [isAlarmOpen, setIsAlarmOpen] = useState(false);
   const [isTimerOpen, setIsTimerOpen] = useState(false);
   const [isStopwatchOpen, setIsStopwatchOpen] = useState(false);
 
   const toggleClock = () => {
-    setIsClockOpen(!isClockOpen);
+    setIsClockOpen(true);
     setIsAlarmOpen(false);
     setIsTimerOpen(false);
     setIsStopwatchOpen(false);
   };
   const toggleAlarm = () => {
-    setIsAlarmOpen(!isAlarmOpen);
+    setIsAlarmOpen(true);
     setIsClockOpen(false);
     setIsTimerOpen(false);
     setIsStopwatchOpen(false);
   };
   const toggleTimer = () => {
-    setIsTimerOpen(!isTimerOpen);
+    setIsTimerOpen(true);
     setIsAlarmOpen(false);
     setIsClockOpen(false);
     setIsStopwatchOpen(false);
   };
   const toggleStopwatch = () => {
-    setIsStopwatchOpen(!isStopwatchOpen);
+    setIsStopwatchOpen(true);
     setIsAlarmOpen(false);
     setIsClockOpen(false);
     setIsTimerOpen(false);
