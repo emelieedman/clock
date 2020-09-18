@@ -60,7 +60,6 @@ const TimerTest = ({ over, setOver, minTwoDigits }) => {
   const hour = new Date(diff).getHours() - 1;
   const min = new Date(diff).getMinutes();
   const sec = new Date(diff).getSeconds();
-  const time = new Date(diff).getTime();
 
   return (
     <>
