@@ -57,6 +57,7 @@ const Alarm = ({ over, setOver }) => {
 
       <div className={styles.alarm}>
         <input
+          required
           className={styles.alarm}
           type="time"
           onChange={(event) => {
@@ -67,9 +68,7 @@ const Alarm = ({ over, setOver }) => {
         <br></br>
         <div
           className={styles.saveButton}
-          onClick={() => {
-            saveOnClick();
-          }}
+          onClick={() => (newAlarm ? saveOnClick() : null)}
         >
           &#43;
         </div>

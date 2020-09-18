@@ -27,7 +27,7 @@ const TimerTest = ({ over, setOver, minTwoDigits }) => {
   }, []);
 
   const toggle = () => {
-    setIsRunning(!isRunning);
+    setIsRunning(true);
 
     const add = new Date();
     add.setHours(add.getHours() + parseInt(hourInput));
@@ -64,7 +64,7 @@ const TimerTest = ({ over, setOver, minTwoDigits }) => {
       <div
         className={styles.wrapper}
         style={{
-          transform: `rotate(${sec * 6}deg)`,
+          transform: `rotate(${isRunning ? sec * 6 : secInput}deg)`,
           transition: "1.1s linear",
         }}
       >
@@ -99,13 +99,8 @@ const TimerTest = ({ over, setOver, minTwoDigits }) => {
         />
       </div>
       <div className={styles.startResetButtons}>
-        <Button text="Reset" onClick={() => reset()} />
-        <Button
-          text={isRunning ? "Pause" : "Start"}
-          onClick={() => {
-            toggle();
-          }}
-        />
+        <Button text="Stop" onClick={() => reset()} />
+        <Button text="Start" onClick={() => (!isRunning ? toggle() : null)} />
       </div>
       {over ? (
         <AlarmPopUp
