@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import styles from "./Timer.module.css";
 import Button from "../../Button/Button";
-// import InputField from "../../InputField/InputField";
 import AlarmPopUp from "../../AlarmPopUp/AlarmPopUp";
 import blackBackground from "../../../Assets/black-bump.svg";
 
@@ -10,10 +9,6 @@ const TimerTest = ({ over, setOver, minTwoDigits }) => {
   const [isRunning, setIsRunning] = useState(false);
 
   const [timeInput, setTimeInput] = useState(0);
-
-  // const [hourInput, setHourInput] = useState(0);
-  // const [minInput, setMinInput] = useState(0);
-  // const [secInput, setSecInput] = useState(0);
 
   const [alarm, setAlarm] = useState(0);
 
@@ -26,7 +21,9 @@ const TimerTest = ({ over, setOver, minTwoDigits }) => {
     resetInput();
   }, []);
 
-  const toggle = () => {
+  console.log("isrunning", isRunning);
+
+  const handleClick = () => {
     setIsRunning(true);
 
     const hours = parseInt(timeInput.split(":")[0]);
@@ -45,17 +42,14 @@ const TimerTest = ({ over, setOver, minTwoDigits }) => {
       if (isRunning) {
         let diff = alarm - new Date().getTime();
         setDiff(diff);
-
-        if (diff < 0) {
-          reset();
-          clearInterval(interval);
-          setOver(true);
-          console.log("RIIIING");
-        }
+      } else if (diff < 0) {
+        reset();
+        clearInterval(interval);
+        setOver(true);
       }
     }, 10);
     return () => clearInterval(interval);
-  }, [isRunning, alarm, reset, setOver]);
+  }, [isRunning, alarm, reset, setOver, diff]);
 
   const hour = new Date(diff).getHours() - 1;
   const min = new Date(diff).getMinutes();
@@ -105,25 +99,12 @@ const TimerTest = ({ over, setOver, minTwoDigits }) => {
               minTwoDigits(sec)}
           </p>
         )}
-
-        {/* <InputField
-          onchange={(event) => setHourInput(event.target.value)}
-          value={minTwoDigits(isRunning ? hour : hourInput)}
-        />
-        <InputField
-          onchange={(event) => setMinInput(event.target.value)}
-          value={minTwoDigits(isRunning ? min : minInput)}
-        />
-        <InputField
-          onchange={(event) => setSecInput(event.target.value)}
-          value={minTwoDigits(isRunning ? sec : secInput)}
-        /> */}
       </div>
       <div className={styles.startResetButtons}>
         <Button text="Stop" onClick={() => reset()} />
         <Button
           text="Start"
-          onClick={() => (!isRunning && timeInput !== 0 ? toggle() : null)}
+          onClick={() => (!isRunning && timeInput !== 0 ? handleClick() : null)}
         />
       </div>
       {over ? (

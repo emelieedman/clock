@@ -32,11 +32,6 @@ const Menu = () => {
     setIsClockOpen(false);
     setIsTimerOpen(false);
   };
-  // const [open, setOpen] = useState(false);
-
-  // const toggleClass = () => {
-  //   setOpen(!open);
-  // };
 
   const navItems = [
     {
