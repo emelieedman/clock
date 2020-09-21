@@ -42,7 +42,8 @@ const TimerTest = ({ over, setOver, minTwoDigits }) => {
       if (isRunning) {
         let diff = alarm - new Date().getTime();
         setDiff(diff);
-      } else if (diff < 0) {
+      }
+      if (diff < 0) {
         reset();
         clearInterval(interval);
         setOver(true);

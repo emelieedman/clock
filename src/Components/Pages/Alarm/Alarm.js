@@ -54,7 +54,6 @@ const Alarm = ({ over, setOver }) => {
   return (
     <>
       <AnalogClock />
-
       <div className={styles.alarm}>
         <input
           required
